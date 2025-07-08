@@ -27,7 +27,12 @@ export default function ReservationPage() {
       },
       body: JSON.stringify(formData),
     })
-    .then(response => response.json())
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
     .then(data => {
       if (data.success) {
         alert('Your reservation request has been sent successfully! We will contact you shortly to confirm your reservation.');
@@ -47,7 +52,11 @@ export default function ReservationPage() {
     })
     .catch(error => {
       console.error('Error:', error);
-      alert('There was an error sending your reservation. Please try again or contact us directly.');
+      if (error.message.includes('Failed to fetch') || error.message.includes('ECONNREFUSED')) {
+        alert('Unable to connect to the server. Please make sure the Supabase development server is running and try again.');
+      } else {
+        alert('There was an error sending your reservation. Please try again or contact us directly.');
+      }
     })
     .finally(() => {
       setIsSubmitting(false);

@@ -25,7 +25,12 @@ export default function ContactPage() {
       },
       body: JSON.stringify(formData),
     })
-    .then(response => response.json())
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
     .then(data => {
       if (data.success) {
         alert('Your message has been sent successfully! We will get back to you within 24 hours.');
@@ -43,7 +48,11 @@ export default function ContactPage() {
     })
     .catch(error => {
       console.error('Error:', error);
-      alert('There was an error sending your message. Please try again or contact us directly.');
+      if (error.message.includes('Failed to fetch') || error.message.includes('ECONNREFUSED')) {
+        alert('Unable to connect to the server. Please make sure the Supabase development server is running and try again.');
+      } else {
+        alert('There was an error sending your message. Please try again or contact us directly.');
+      }
     })
     .finally(() => {
       setIsSubmitting(false);
