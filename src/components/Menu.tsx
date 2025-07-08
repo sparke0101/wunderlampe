@@ -29,7 +29,7 @@ export default function Menu() {
       id: 'longdrinks', 
       label: t('longdrinks'), 
       icon: Martini,
-      image: '/set-classic-cold-alcoholic-cocktails-white-russian-bramble-whiskey-sour-negroni_400928-290.jpg'
+      image: '/fresh-cocktails-wooden-table-with-leafs-generative-ai_188544-12374.jpg'
     },
     { id: 'softdrinks', label: t('softdrinks'), icon: Droplets },
     { id: 'hotDrinks', label: t('hotDrinks'), icon: Coffee },
@@ -246,7 +246,7 @@ export default function Menu() {
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-gray-950/90 via-gray-950/40 to-gray-950/20" />
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-950/85 via-gray-950/30 to-transparent" />
               <div className="absolute bottom-4 left-4">
                 <h3 className="text-3xl md:text-4xl font-display font-bold text-white">
                   {currentCategory.label}
