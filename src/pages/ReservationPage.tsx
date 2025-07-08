@@ -16,8 +16,49 @@ export default function ReservationPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Reservation submitted:', formData);
+    
+    // Create email body with reservation details
+    const emailBody = `
+New Reservation Request from Wunder Lampe Website
+
+Customer Details:
+- Name: ${formData.name}
+- Email: ${formData.email}
+- Phone: ${formData.phone}
+
+Reservation Details:
+- Date: ${formData.date}
+- Time: ${formData.time}
+- Number of Guests: ${formData.guests}
+
+Special Requests:
+${formData.message || 'None'}
+
+---
+This reservation was submitted through the Wunder Lampe website.
+Please contact the customer to confirm the reservation.
+    `.trim();
+
+    // Create mailto link
+    const subject = `New Reservation Request - ${formData.name} - ${formData.date}`;
+    const mailtoLink = `mailto:info.wunderlampe@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+    
+    // Show success message
+    alert('Your reservation request has been prepared for sending. Please send the email that just opened in your email client to complete your reservation request.');
+    
+    // Reset form
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      date: '',
+      time: '',
+      guests: '2',
+      message: ''
+    });
   };
 
   return (

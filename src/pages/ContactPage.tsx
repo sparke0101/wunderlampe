@@ -14,8 +14,42 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Contact form submitted:', formData);
+    
+    // Create email body with contact details
+    const emailBody = `
+New Contact Message from Wunder Lampe Website
+
+Customer Details:
+- Name: ${formData.name}
+- Email: ${formData.email}
+- Phone: ${formData.phone || 'Not provided'}
+- Subject: ${formData.subject}
+
+Message:
+${formData.message}
+
+---
+This message was submitted through the Wunder Lampe website contact form.
+    `.trim();
+
+    // Create mailto link
+    const subject = `Contact Form: ${formData.subject} - ${formData.name}`;
+    const mailtoLink = `mailto:info.wunderlampe@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+    
+    // Show success message
+    alert('Your message has been prepared for sending. Please send the email that just opened in your email client to complete your contact request.');
+    
+    // Reset form
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      subject: '',
+      message: ''
+    });
   };
 
   return (
