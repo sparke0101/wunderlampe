@@ -17,7 +17,7 @@ export default function Menu() {
           className="w-5 h-5 brightness-110" 
         />
       ),
-      image: '/WhatsApp%20Image%202025-07-08%20at%202.11.40%20PM.jpeg'
+      image: '/hookah-lounge-bar-table-relaxation-habit_482257-9588.jpg'
     },
     { 
       id: 'cocktails', 
@@ -246,7 +246,7 @@ export default function Menu() {
                 className="w-full h-full object-cover"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-gray-950/80 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-950/90 via-gray-950/40 to-gray-950/20" />
               <div className="absolute bottom-4 left-4">
                 <h3 className="text-3xl md:text-4xl font-display font-bold text-white">
                   {currentCategory.label}
