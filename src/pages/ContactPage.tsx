@@ -88,7 +88,7 @@ export default function ContactPage() {
                   <div>
                     <h4 className="text-white font-body font-semibold text-base sm:text-lg">Phone</h4>
                     <a href="tel:+4915788818885" className="text-light-gray font-body hover:text-gold transition-colors text-sm sm:text-base">+49 1578 8818885</a>
-                    <p className="text-gray-500 font-body text-xs sm:text-sm">Available during business hours</p>
+                    <p className="text-gray-500 font-body text-xs sm:text-sm">Verfügbar während der Geschäftszeiten</p>
                   </div>
                 </div>
 
