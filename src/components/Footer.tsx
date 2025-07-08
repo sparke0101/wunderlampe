@@ -33,16 +33,12 @@ export default function Footer() {
             </h3>
             <div className="space-y-2 text-light-gray font-body">
               <div className="flex justify-between">
-                <span>Monday - Thursday:</span>
-                <span className="text-white">6:00 PM - 2:00 AM</span>
+                <span>Monday - Friday:</span>
+                <span className="text-white">4:00 PM - 2:00 AM</span>
               </div>
               <div className="flex justify-between">
-                <span>Friday - Saturday:</span>
-                <span className="text-white">6:00 PM - 3:00 AM</span>
-              </div>
-              <div className="flex justify-between">
-                <span>Sunday:</span>
-                <span className="text-white">6:00 PM - 1:00 AM</span>
+                <span>Weekend:</span>
+                <span className="text-white">4:00 PM - 4:00 AM</span>
               </div>
             </div>
           </div>
