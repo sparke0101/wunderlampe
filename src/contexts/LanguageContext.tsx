@@ -48,7 +48,7 @@ const translations = {
     
     // Common
     price: 'Preis',
-    viewMenu: 'Speisekarte ansehen',
+    viewMenu: 'Menu',
     makeReservation: 'Reservierung',
   },
   en: {
@@ -87,7 +87,7 @@ const translations = {
     
     // Common
     price: 'Price',
-    viewMenu: 'View Menu',
+    viewMenu: 'Menu',
     makeReservation: 'Make Reservation',
   },
   ar: {
@@ -126,7 +126,7 @@ const translations = {
     
     // Common
     price: 'السعر',
-    viewMenu: 'عرض القائمة',
+    viewMenu: 'Menu',
     makeReservation: 'احجز الآن',
   },
   fr: {
@@ -165,7 +165,7 @@ const translations = {
     
     // Common
     price: 'Prix',
-    viewMenu: 'Voir le Menu',
+    viewMenu: 'Menu',
     makeReservation: 'Réserver',
   },
 };
