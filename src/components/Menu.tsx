@@ -23,13 +23,13 @@ export default function Menu() {
       id: 'cocktails', 
       label: t('cocktails'), 
       icon: Martini,
-      image: '/set-classic-cold-alcoholic-cocktails-white-russian-bramble-whiskey-sour-negroni_400928-290.jpg'
+      image: '/fresh-cocktails-wooden-table-with-leafs-generative-ai_188544-12374.jpg'
     },
     { 
       id: 'longdrinks', 
       label: t('longdrinks'), 
       icon: Martini,
-      image: '/fresh-cocktails-wooden-table-with-leafs-generative-ai_188544-12374.jpg'
+      image: '/set-classic-cold-alcoholic-cocktails-white-russian-bramble-whiskey-sour-negroni_400928-290.jpg'
     },
     { id: 'softdrinks', label: t('softdrinks'), icon: Droplets },
     { id: 'hotDrinks', label: t('hotDrinks'), icon: Coffee },
