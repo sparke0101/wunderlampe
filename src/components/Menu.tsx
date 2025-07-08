@@ -297,6 +297,14 @@ export default function Menu() {
               <p className="text-light-gray font-body group-hover:text-white transition-colors duration-300 text-sm sm:text-base md:text-lg leading-relaxed mb-3 sm:mb-4">
                 {item.description}
               </p>
+              <div className="flex justify-end">
+                <button 
+                  onClick={() => window.open(`tel:+4915788818885`, '_self')}
+                  className="text-gold hover:text-gold-light transition-colors duration-300 font-body font-medium text-sm sm:text-base active:scale-95"
+                >
+                  Order Now →
+                </button>
+              </div>
             </div>
           ))}
         </div>
