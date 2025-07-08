@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-export type Language = 'de' | 'en' | 'ar' | 'fr';
+export type Language = 'de' | 'en' | 'fr';
 
 interface LanguageContextType {
   language: Language;
@@ -129,45 +129,6 @@ const translations = {
     viewMenu: 'Menu',
     makeReservation: 'احجز الآن',
   },
-  fr: {
-    // Navigation
-    home: 'Accueil',
-    menu: 'Menu',
-    reservation: 'Réservation',
-    location: 'Emplacement',
-    contact: 'Contact',
-    
-    // Hero Section
-    heroTitle: 'Wunder Lampe',
-    heroTagline: 'Où la Fumée Rencontre la Sophistication',
-    heroDescription: 'Découvrez le mélange parfait de chicha premium, de cocktails exquis et d\'atmosphère luxueuse',
-    
-    // Menu Categories
-    softdrinks: 'Boissons Gazeuses',
-    hotDrinks: 'Boissons Chaudes',
-    beer: 'Bière',
-    longdrinks: 'Long Drinks',
-    cocktails: 'Cocktails',
-    nonAlcoholicCocktails: 'Cocktails Sans Alcool',
-    shots: 'Shots',
-    wine: 'Vin',
-    bottles: 'Bouteilles',
-    whiskys: 'Whiskys',
-    shisha: 'Chicha',
-    
-    // Footer
-    openingHours: 'Heures d\'Ouverture',
-    address: 'Adresse',
-    followUs: 'Suivez-nous',
-    newsletter: 'Newsletter',
-    newsletterPlaceholder: 'Entrez votre email',
-    subscribe: 'S\'abonner',
-    
-    // Common
-    price: 'Prix',
-    viewMenu: 'Menu',
-    makeReservation: 'Réserver',
-  },
 };
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
@@ -175,7 +136,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const isRTL = language === 'ar';
 
   useEffect(() => {
-    document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
+    document.documentElement.dir = 'ltr';
   }, [isRTL]);
 
   const t = (key: string): string => {

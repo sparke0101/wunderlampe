@@ -23,7 +23,6 @@ export default function Header({ currentPage, onPageChange }: HeaderProps) {
   const languages = [
     { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
     { code: 'en', name: 'English', flag: '🇬🇧' },
-    { code: 'ar', name: 'العربية', flag: '🇸🇦' },
     { code: 'fr', name: 'Français', flag: '🇫🇷' },
   ];
 
