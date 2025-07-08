@@ -18,7 +18,6 @@ export default function Footer() {
                 className="w-8 h-8 brightness-110" 
               />
               <span className="text-2xl font-bold text-gold">Wunder Lampe</span>
-              <span className="text-2xl font-display font-bold text-gold">Wunder Lampe</span>
             </div>
             <p className="text-light-gray font-body leading-relaxed">
               Experience the perfect blend of premium shisha, exquisite cocktails, and luxurious atmosphere in the heart of the city.
