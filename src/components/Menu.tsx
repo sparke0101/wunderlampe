@@ -184,6 +184,23 @@ export default function Menu() {
       { name: 'Midnight Mango', price: '28€', description: 'Exotic Mango Fusion' },
       { name: 'Diamond Mint', price: '35€', description: 'Ultra Premium Mint' },
     ],
+    bottles: [
+      { name: 'Three Sixty (mit 6 Red Bull)', price: '90,00 €', description: 'Premium Vodka mit 6 Red Bull Energy Drinks' },
+      { name: 'Absolut (mit 6 Red Bull)', price: '90,00 €', description: 'Absolut Vodka mit 6 Red Bull Energy Drinks' },
+      { name: 'Jägermeister (mit 6 Red Bull)', price: '90,00 €', description: 'Jägermeister Kräuterlikör mit 6 Red Bull Energy Drinks' },
+      { name: 'Jack Daniels (mit 2 Cola Flaschen)', price: '110,00 €', description: 'Jack Daniels Whiskey mit 2 Cola Flaschen' },
+      { name: 'Red Label (mit 2 Cola Flaschen)', price: '110,00 €', description: 'Johnnie Walker Red Label mit 2 Cola Flaschen' },
+      { name: 'Moët', price: '120,00 €', description: 'Moët & Chandon Champagner' },
+      { name: 'Belvedere (mit 6 Red Bull)', price: '130,00 €', description: 'Belvedere Premium Vodka mit 6 Red Bull Energy Drinks' },
+      { name: 'Grey Goose (mit 6 Red Bull)', price: '130,00 €', description: 'Grey Goose Premium Vodka mit 6 Red Bull Energy Drinks' },
+    ],
+    whiskys: [
+      { name: 'Hennessy 4cl', price: '8,50 €', description: 'Premium französischer Cognac' },
+      { name: 'Chivas Regal 4cl', price: '8,50 €', description: 'Schottischer Blended Whisky' },
+      { name: 'Ballantines 4cl', price: '6,50 €', description: 'Schottischer Blended Whisky' },
+      { name: 'Red Label 4cl', price: '6,50 €', description: 'Johnnie Walker Red Label Whisky' },
+      { name: 'Jack Daniels 4cl', price: '6,50 €', description: 'Tennessee Whiskey aus Amerika' },
+    ],
     // Add more categories as needed
   };
 
