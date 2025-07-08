@@ -25,10 +25,10 @@ export default function ReservationPage() {
       <div className="container mx-auto max-w-4xl">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gold to-yellow-400 mb-4">
+          <h2 className="text-5xl md:text-6xl font-display font-bold text-gold mb-4">
             {t('makeReservation')}
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-light-gray font-body max-w-2xl mx-auto">
             Reserve your table for an unforgettable evening at Wunder Lampe
           </p>
         </div>
@@ -39,7 +39,7 @@ export default function ReservationPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Name */}
               <div>
-                <label className="block text-gold font-medium mb-2 flex items-center space-x-2">
+                <label className="block text-gold font-body font-medium mb-2 flex items-center space-x-2">
                   <User className="w-4 h-4" />
                   <span>Full Name</span>
                 </label>
@@ -55,7 +55,7 @@ export default function ReservationPage() {
 
               {/* Email */}
               <div>
-                <label className="block text-gold font-medium mb-2 flex items-center space-x-2">
+                <label className="block text-gold font-body font-medium mb-2 flex items-center space-x-2">
                   <Mail className="w-4 h-4" />
                   <span>Email</span>
                 </label>
@@ -71,7 +71,7 @@ export default function ReservationPage() {
 
               {/* Phone */}
               <div>
-                <label className="block text-gold font-medium mb-2 flex items-center space-x-2">
+                <label className="block text-gold font-body font-medium mb-2 flex items-center space-x-2">
                   <Phone className="w-4 h-4" />
                   <span>Phone</span>
                 </label>
@@ -87,7 +87,7 @@ export default function ReservationPage() {
 
               {/* Guests */}
               <div>
-                <label className="block text-gold font-medium mb-2 flex items-center space-x-2">
+                <label className="block text-gold font-body font-medium mb-2 flex items-center space-x-2">
                   <Users className="w-4 h-4" />
                   <span>Number of Guests</span>
                 </label>
@@ -104,7 +104,7 @@ export default function ReservationPage() {
 
               {/* Date */}
               <div>
-                <label className="block text-gold font-medium mb-2 flex items-center space-x-2">
+                <label className="block text-gold font-body font-medium mb-2 flex items-center space-x-2">
                   <Calendar className="w-4 h-4" />
                   <span>Date</span>
                 </label>
@@ -119,7 +119,7 @@ export default function ReservationPage() {
 
               {/* Time */}
               <div>
-                <label className="block text-gold font-medium mb-2 flex items-center space-x-2">
+                <label className="block text-gold font-body font-medium mb-2 flex items-center space-x-2">
                   <Clock className="w-4 h-4" />
                   <span>Time</span>
                 </label>
@@ -145,7 +145,7 @@ export default function ReservationPage() {
 
             {/* Message */}
             <div>
-              <label className="block text-gold font-medium mb-2">
+              <label className="block text-gold font-body font-medium mb-2">
                 Special Requests (Optional)
               </label>
               <textarea
@@ -161,7 +161,7 @@ export default function ReservationPage() {
             <div className="text-center">
               <button
                 type="submit"
-                className="px-12 py-4 bg-gradient-to-r from-gold to-yellow-500 text-black font-semibold rounded-lg transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-gold/50"
+                className="px-12 py-4 bg-gold text-black font-body font-semibold rounded-lg transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-gold/50 hover:bg-gold-light"
               >
                 Confirm Reservation
               </button>

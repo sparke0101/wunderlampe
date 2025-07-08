@@ -213,10 +213,10 @@ export default function Menu() {
       <div className="container mx-auto max-w-6xl">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gold to-yellow-400 mb-4">
+          <h2 className="text-5xl md:text-6xl font-display font-bold text-gold mb-4">
             {t('menu')}
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-light-gray font-body max-w-2xl mx-auto">
             Discover our premium selection of cocktails, shisha, and fine beverages
           </p>
         </div>
@@ -231,9 +231,10 @@ export default function Menu() {
                   key={category.id}
                   onClick={() => setActiveCategory(category.id)}
                   className={`flex items-center space-x-2 px-4 py-3 rounded-lg font-medium transition-all duration-300 ${
+                  className={`flex items-center space-x-2 px-4 py-3 rounded-lg font-body font-medium transition-all duration-300 ${
                     activeCategory === category.id
-                      ? 'bg-gradient-to-r from-gold to-yellow-500 text-black shadow-lg shadow-gold/30'
-                      : 'bg-gray-900 text-gray-300 hover:bg-gold/20 hover:text-gold border border-gold/20'
+                      ? 'bg-gold text-black shadow-lg shadow-gold/30'
+                      : 'bg-gray-900 text-light-gray hover:bg-gold/20 hover:text-gold border border-gold/20'
                   }`}
                 >
                   <Icon className="w-5 h-5" />
@@ -252,18 +253,18 @@ export default function Menu() {
               className="group bg-gradient-to-br from-gray-900 to-gray-950 border-2 border-gold/30 rounded-xl p-6 hover:border-gold transition-all duration-300 hover:shadow-xl hover:shadow-gold/20 transform hover:-translate-y-2"
             >
               <div className="flex justify-between items-start mb-4">
-                <h3 className="text-xl font-semibold text-white group-hover:text-gold transition-colors duration-300">
+                <h3 className="text-xl font-body font-semibold text-white group-hover:text-gold transition-colors duration-300">
                   {item.name}
                 </h3>
-                <span className="text-2xl font-bold text-gold bg-gold/10 px-3 py-1 rounded-full">
+                <span className="text-2xl font-body font-bold text-gold bg-gold/10 px-3 py-1 rounded-full">
                   {item.price}
                 </span>
               </div>
-              <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
+              <p className="text-light-gray font-body group-hover:text-white transition-colors duration-300">
                 {item.description}
               </p>
               <div className="mt-4 flex justify-end">
-                <button className="text-gold hover:text-yellow-400 transition-colors duration-300 font-medium">
+                <button className="text-gold hover:text-gold-light transition-colors duration-300 font-body font-medium">
                   Order Now →
                 </button>
               </div>

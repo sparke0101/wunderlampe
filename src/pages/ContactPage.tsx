@@ -23,10 +23,10 @@ export default function ContactPage() {
       <div className="container mx-auto max-w-6xl">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gold to-yellow-400 mb-4">
+          <h2 className="text-5xl md:text-6xl font-display font-bold text-gold mb-4">
             {t('contact')}
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-light-gray font-body max-w-2xl mx-auto">
             Get in touch with us for reservations, events, or any inquiries
           </p>
         </div>
@@ -35,40 +35,40 @@ export default function ContactPage() {
           {/* Contact Information */}
           <div className="space-y-8">
             <div className="bg-gradient-to-br from-gray-900 to-gray-950 border-2 border-gold/30 rounded-2xl p-8">
-              <h3 className="text-3xl font-bold text-gold mb-6">Get in Touch</h3>
+              <h3 className="text-3xl font-display font-bold text-gold mb-6">Get in Touch</h3>
               
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <Phone className="w-6 h-6 text-gold mt-1" />
                   <div>
-                    <h4 className="text-white font-semibold text-lg">Phone</h4>
-                    <p className="text-gray-400">+49 (0) 123 456 789</p>
-                    <p className="text-gray-500 text-sm">Available during business hours</p>
+                    <h4 className="text-white font-body font-semibold text-lg">Phone</h4>
+                    <p className="text-light-gray font-body">+49 (0) 123 456 789</p>
+                    <p className="text-gray-500 font-body text-sm">Available during business hours</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
                   <Mail className="w-6 h-6 text-gold mt-1" />
                   <div>
-                    <h4 className="text-white font-semibold text-lg">Email</h4>
-                    <p className="text-gray-400">info@wunderlampe.de</p>
-                    <p className="text-gray-500 text-sm">We'll respond within 24 hours</p>
+                    <h4 className="text-white font-body font-semibold text-lg">Email</h4>
+                    <p className="text-light-gray font-body">info@wunderlampe.de</p>
+                    <p className="text-gray-500 font-body text-sm">We'll respond within 24 hours</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
                   <MapPin className="w-6 h-6 text-gold mt-1" />
                   <div>
-                    <h4 className="text-white font-semibold text-lg">Address</h4>
-                    <p className="text-gray-400">Hauptstraße 123<br />12345 Berlin, Germany</p>
+                    <h4 className="text-white font-body font-semibold text-lg">Address</h4>
+                    <p className="text-light-gray font-body">Hauptstraße 123<br />12345 Berlin, Germany</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
                   <Clock className="w-6 h-6 text-gold mt-1" />
                   <div>
-                    <h4 className="text-white font-semibold text-lg">Business Hours</h4>
-                    <div className="text-gray-400 space-y-1">
+                    <h4 className="text-white font-body font-semibold text-lg">Business Hours</h4>
+                    <div className="text-light-gray font-body space-y-1">
                       <p>Monday - Thursday: 6:00 PM - 2:00 AM</p>
                       <p>Friday - Saturday: 6:00 PM - 3:00 AM</p>
                       <p>Sunday: 6:00 PM - 1:00 AM</p>
@@ -80,28 +80,28 @@ export default function ContactPage() {
 
             {/* Special Services */}
             <div className="bg-gradient-to-br from-gray-900 to-gray-950 border-2 border-gold/30 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-gold mb-6">Special Services</h3>
+              <h3 className="text-2xl font-display font-bold text-gold mb-6">Special Services</h3>
               
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-gold rounded-full"></div>
-                  <span className="text-gray-300">Private Events & Parties</span>
+                  <span className="text-light-gray font-body">Private Events & Parties</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-gold rounded-full"></div>
-                  <span className="text-gray-300">Corporate Events</span>
+                  <span className="text-light-gray font-body">Corporate Events</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-gold rounded-full"></div>
-                  <span className="text-gray-300">Birthday Celebrations</span>
+                  <span className="text-light-gray font-body">Birthday Celebrations</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-gold rounded-full"></div>
-                  <span className="text-gray-300">VIP Table Service</span>
+                  <span className="text-light-gray font-body">VIP Table Service</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-gold rounded-full"></div>
-                  <span className="text-gray-300">Catering Services</span>
+                  <span className="text-light-gray font-body">Catering Services</span>
                 </div>
               </div>
             </div>
@@ -109,12 +109,12 @@ export default function ContactPage() {
 
           {/* Contact Form */}
           <div className="bg-gradient-to-br from-gray-900 to-gray-950 border-2 border-gold/30 rounded-2xl p-8">
-            <h3 className="text-3xl font-bold text-gold mb-6">Send us a Message</h3>
+            <h3 className="text-3xl font-display font-bold text-gold mb-6">Send us a Message</h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-gold font-medium mb-2">Name *</label>
+                  <label className="block text-gold font-body font-medium mb-2">Name *</label>
                   <input
                     type="text"
                     required
@@ -126,7 +126,7 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label className="block text-gold font-medium mb-2">Email *</label>
+                  <label className="block text-gold font-body font-medium mb-2">Email *</label>
                   <input
                     type="email"
                     required
@@ -140,7 +140,7 @@ export default function ContactPage() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-gold font-medium mb-2">Phone</label>
+                  <label className="block text-gold font-body font-medium mb-2">Phone</label>
                   <input
                     type="tel"
                     value={formData.phone}
@@ -151,7 +151,7 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label className="block text-gold font-medium mb-2">Subject *</label>
+                  <label className="block text-gold font-body font-medium mb-2">Subject *</label>
                   <select
                     required
                     value={formData.subject}
@@ -168,7 +168,7 @@ export default function ContactPage() {
               </div>
 
               <div>
-                <label className="block text-gold font-medium mb-2">Message *</label>
+                <label className="block text-gold font-body font-medium mb-2">Message *</label>
                 <textarea
                   required
                   rows={6}
@@ -181,7 +181,7 @@ export default function ContactPage() {
 
               <button
                 type="submit"
-                className="w-full px-8 py-4 bg-gradient-to-r from-gold to-yellow-500 text-black font-semibold rounded-lg transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-gold/50 flex items-center justify-center space-x-2"
+                className="w-full px-8 py-4 bg-gold text-black font-body font-semibold rounded-lg transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-gold/50 flex items-center justify-center space-x-2 hover:bg-gold-light"
               >
                 <Send className="w-5 h-5" />
                 <span>Send Message</span>

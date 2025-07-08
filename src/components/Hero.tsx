@@ -34,21 +34,22 @@ export default function Hero({ onPageChange }: HeroProps) {
             className="w-16 h-16 mx-auto mb-4 animate-pulse brightness-110" 
           />
           <h1 className="text-6xl md:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gold via-yellow-400 to-gold mb-4 animate-fade-in">
+          <h1 className="text-6xl md:text-8xl font-display font-bold text-gold mb-4 animate-fade-in">
             {t('heroTitle')}
           </h1>
-          <p className="text-2xl md:text-3xl text-neon-cyan font-light mb-6 animate-fade-in-delay">
+          <p className="text-2xl md:text-3xl text-soft-blue-white font-body font-light mb-6 animate-fade-in-delay">
             {t('heroTagline')}
           </p>
         </div>
 
-        <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed animate-fade-in-delay-2">
+        <p className="text-lg md:text-xl text-light-gray font-body mb-8 max-w-2xl mx-auto leading-relaxed animate-fade-in-delay-2">
           {t('heroDescription')}
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-delay-3">
           <button
             onClick={() => onPageChange('menu')}
-            className="group px-8 py-4 bg-gradient-to-r from-gold to-yellow-500 text-black font-semibold rounded-lg transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-gold/50 flex items-center space-x-2"
+            className="group px-8 py-4 bg-gold text-black font-body font-semibold rounded-lg transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-gold/50 flex items-center space-x-2 hover:bg-gold-light"
           >
             <span>{t('viewMenu')}</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
@@ -56,7 +57,7 @@ export default function Hero({ onPageChange }: HeroProps) {
           
           <button
             onClick={() => onPageChange('reservation')}
-            className="group px-8 py-4 border-2 border-gold text-gold font-semibold rounded-lg hover:bg-gold hover:text-black transition-all duration-300 flex items-center space-x-2"
+            className="group px-8 py-4 bg-black border-2 border-gold text-white font-body font-semibold rounded-lg hover:bg-gold hover:text-black transition-all duration-300 flex items-center space-x-2"
           >
             <span>{t('makeReservation')}</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
