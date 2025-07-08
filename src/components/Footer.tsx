@@ -94,7 +94,7 @@ export default function Footer() {
                 Connect with fellow shisha enthusiasts and stay updated with exclusive offers
               </p>
               
-              <div className="bg-white rounded-xl p-4 mb-4 inline-block">
+              <div className="mb-4 inline-block">
                 <img 
                   src="/WhatsApp%20Image%202025-07-08%20at%202.30.33%20PM.jpeg" 
                   alt="WhatsApp Group QR Code" 
