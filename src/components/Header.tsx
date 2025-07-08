@@ -45,6 +45,7 @@ export default function Header({ currentPage, onPageChange }: HeaderProps) {
             <span className="text-2xl font-display font-bold text-gold group-hover:text-soft-blue-white transition-colors duration-300">
               Wunder Lampe
             </span>
+            </span>
           </div>
 
           {/* Desktop Navigation */}
@@ -89,7 +90,6 @@ export default function Header({ currentPage, onPageChange }: HeaderProps) {
                         setIsLanguageMenuOpen(false);
                       }}
                       className={`w-full text-left px-4 py-2 text-sm transition-colors duration-300 flex items-center space-x-2 ${
-                      className={`w-full text-left px-4 py-2 text-sm font-body transition-colors duration-300 flex items-center space-x-2 ${
                         language === lang.code 
                           ? 'text-gold bg-gold/10' 
                           : 'text-white hover:text-gold hover:bg-gold/5'
@@ -127,7 +127,6 @@ export default function Header({ currentPage, onPageChange }: HeaderProps) {
                   className={`text-left py-2 text-lg font-body font-medium transition-colors duration-300 ${
                     currentPage === item.id ? 'text-gold' : 'text-white hover:text-gold'
                   }`}
-                  <span className="text-sm font-body font-medium">
                 >
                   {item.label}
                 </button>
