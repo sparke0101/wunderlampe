@@ -214,7 +214,7 @@ export default function Menu() {
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-5xl md:text-6xl font-display font-bold text-gold mb-4">
-            Speisekarte
+            {t('menu')}
           </h2>
           <p className="text-xl text-light-gray font-body max-w-2xl mx-auto">
             Discover our premium selection of cocktails, shisha, and fine beverages

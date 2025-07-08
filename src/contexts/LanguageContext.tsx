@@ -15,7 +15,7 @@ const translations = {
   de: {
     // Navigation
     home: 'Startseite',
-    menu: 'Speisekarte',
+    menu: 'Menu',
     reservation: 'Reservierung',
     location: 'Standort',
     contact: 'Kontakt',
@@ -93,7 +93,7 @@ const translations = {
   ar: {
     // Navigation
     home: 'الرئيسية',
-    menu: 'القائمة',
+    menu: 'Menu',
     reservation: 'الحجز',
     location: 'الموقع',
     contact: 'اتصل بنا',
