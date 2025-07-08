@@ -86,7 +86,7 @@ Deno.serve(async (req: Request) => {
 <html>
 <head>
   <meta charset="utf-8">
-  <title>New Reservation Request - Wunder Lampe</title>
+  <title>New Reservation Request - Wunderlampe</title>
   <style>
     body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
     .container { max-width: 600px; margin: 0 auto; padding: 20px; }
@@ -105,7 +105,7 @@ Deno.serve(async (req: Request) => {
   <div class="container">
     <div class="header">
       <h1>🍃 New Reservation Request</h1>
-      <p>Wunder Lampe - Premium Shisha Bar</p>
+      <p>Wunderlampe - Premium Shisha Bar</p>
     </div>
     <div class="content">
       <div class="urgent">
@@ -149,7 +149,7 @@ Deno.serve(async (req: Request) => {
       ` : ''}
       
       <div class="footer">
-        <p>This reservation was submitted through the Wunder Lampe website.</p>
+        <p>This reservation was submitted through the Wunderlampe website.</p>
         <p>Reservation ID: ${reservation.id}</p>
         <p>Submitted: ${new Date(reservation.created_at).toLocaleString('de-DE')}</p>
         <p><strong>Please contact the customer within 2 hours to confirm availability.</strong></p>
@@ -168,7 +168,7 @@ Deno.serve(async (req: Request) => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          from: 'Wunder Lampe Reservations <reservations@wunderlampe.com>',
+          from: 'Wunderlampe Reservations <reservations@wunderlampe.com>',
           to: ['info.wunderlampe@gmail.com'],
           subject: `New Reservation: ${name} - ${formattedDate} at ${formattedTime}`,
           html: emailBody,
@@ -182,7 +182,7 @@ Deno.serve(async (req: Request) => {
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Reservation Request Received - Wunder Lampe</title>
+  <title>Reservation Request Received - Wunderlampe</title>
   <style>
     body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
     .container { max-width: 600px; margin: 0 auto; padding: 20px; }
@@ -197,11 +197,12 @@ Deno.serve(async (req: Request) => {
   <div class="container">
     <div class="header">
       <h1>🍃 Thank You for Your Reservation Request</h1>
-      <p>Wunder Lampe - Premium Shisha Bar</p>
+      <p>Wunderlampe - Premium Shisha Bar</p>
     </div>
     <div class="content">
       <p>Dear ${name},</p>
       <p>Thank you for choosing Wunder Lampe! We have received your reservation request and will contact you shortly to confirm availability.</p>
+      <p>Thank you for choosing Wunderlampe! We have received your reservation request and will contact you shortly to confirm availability.</p>
       
       <div class="reservation-summary">
         <h3 style="color: #d4af37; margin-top: 0;">Your Reservation Request</h3>
@@ -219,9 +220,10 @@ Deno.serve(async (req: Request) => {
       </div>
       
       <p>We look forward to welcoming you to Wunder Lampe for an unforgettable evening!</p>
+      <p>We look forward to welcoming you to Wunderlampe for an unforgettable evening!</p>
       
       <div class="footer">
-        <p><strong>Wunder Lampe</strong><br>
+        <p><strong>Wunderlampe</strong><br>
         Eisenbahnstraße 98, 04315 Leipzig<br>
         Phone: <a href="tel:+4915788818885">+49 1578 8818885</a><br>
         Email: <a href="mailto:info.wunderlampe@gmail.com">info.wunderlampe@gmail.com</a></p>
@@ -239,9 +241,9 @@ Deno.serve(async (req: Request) => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          from: 'Wunder Lampe <noreply@wunderlampe.com>',
+          from: 'Wunderlampe <noreply@wunderlampe.com>',
           to: [email],
-          subject: 'Reservation Request Received - Wunder Lampe',
+          subject: 'Reservation Request Received - Wunderlampe',
           html: customerEmailBody,
         }),
       });

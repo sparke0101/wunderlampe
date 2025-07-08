@@ -14,10 +14,10 @@ export default function Footer() {
             <div className="flex items-center space-x-2">
               <img 
                 src="/1000134193-removebg-preview.png" 
-                alt="Wunder Lampe Logo" 
+                alt="Wunderlampe Logo" 
                 className="w-6 h-6 sm:w-8 sm:h-8 brightness-110" 
               />
-              <span className="text-xl sm:text-2xl font-bold text-gold">Wunder Lampe</span>
+              <span className="text-xl sm:text-2xl font-bold text-gold">Wunderlampe</span>
             </div>
             <p className="text-sm sm:text-base text-light-gray font-body leading-relaxed">
               Experience the perfect blend of premium shisha, exquisite cocktails, and luxurious atmosphere in the heart of the city.
@@ -126,7 +126,7 @@ export default function Footer() {
               </div>
             </div>
             <div className="text-light-gray font-body text-xs sm:text-sm">
-              © 2025 Wunder Lampe. All rights reserved.
+              © 2025 Wunderlampe. All rights reserved.
             </div>
           </div>
         </div>

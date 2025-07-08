@@ -20,7 +20,7 @@ const translations = {
     contact: 'Kontakt',
     
     // Hero Section
-    heroTitle: 'Wunder Lampe',
+    heroTitle: 'Wunderlampe',
     heroTagline: 'Wo Rauch auf Raffinesse trifft',
     heroDescription: 'Erleben Sie die perfekte Mischung aus Premium-Shisha, exquisiten Cocktails und luxuriöser Atmosphäre',
     
@@ -58,7 +58,7 @@ const translations = {
     contact: 'Contact',
     
     // Hero Section
-    heroTitle: 'Wunder Lampe',
+    heroTitle: 'Wunderlampe',
     heroTagline: 'Where Smoke Meets Sophistication',
     heroDescription: 'Experience the perfect blend of premium shisha, exquisite cocktails, and luxurious atmosphere',
     

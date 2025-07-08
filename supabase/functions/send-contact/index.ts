@@ -64,7 +64,7 @@ Deno.serve(async (req: Request) => {
 <html>
 <head>
   <meta charset="utf-8">
-  <title>New Contact Message - Wunder Lampe</title>
+  <title>New Contact Message - Wunderlampe</title>
   <style>
     body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
     .container { max-width: 600px; margin: 0 auto; padding: 20px; }
@@ -81,7 +81,7 @@ Deno.serve(async (req: Request) => {
   <div class="container">
     <div class="header">
       <h1>🍃 New Contact Message</h1>
-      <p>Wunder Lampe - Premium Shisha Bar</p>
+      <p>Wunderlampe - Premium Shisha Bar</p>
     </div>
     <div class="content">
       <div class="field">
@@ -107,7 +107,7 @@ Deno.serve(async (req: Request) => {
         <div class="value">${message.replace(/\n/g, '<br>')}</div>
       </div>
       <div class="footer">
-        <p>This message was submitted through the Wunder Lampe website contact form.</p>
+        <p>This message was submitted through the Wunderlampe website contact form.</p>
         <p>Contact ID: ${contact.id}</p>
         <p>Submitted: ${new Date(contact.created_at).toLocaleString('de-DE')}</p>
       </div>
@@ -124,7 +124,7 @@ Deno.serve(async (req: Request) => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          from: 'Wunder Lampe Website <noreply@wunderlampe.com>',
+          from: 'Wunderlampe Website <noreply@wunderlampe.com>',
           to: ['info.wunderlampe@gmail.com'],
           subject: `New Contact Message: ${subject}`,
           html: emailBody,

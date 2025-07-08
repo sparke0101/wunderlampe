@@ -36,11 +36,11 @@ export default function Header({ currentPage, onPageChange }: HeaderProps) {
           >
             <img 
               src="/1000134193-removebg-preview.png" 
-              alt="Wunder Lampe Logo" 
+              alt="Wunderlampe Logo" 
               className="w-8 h-8 sm:w-10 sm:h-10 group-hover:brightness-125 transition-all duration-300" 
             />
             <span className="text-xl sm:text-2xl font-display font-bold text-gold group-hover:text-soft-blue-white transition-colors duration-300">
-              Wunder Lampe
+              Wunderlampe
             </span>
           </div>
 

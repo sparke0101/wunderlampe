@@ -30,7 +30,7 @@ export default function Hero({ onPageChange }: HeroProps) {
         <div className="mb-8">
           <img 
             src="/1000134193-removebg-preview.png" 
-            alt="Wunder Lampe Logo" 
+            alt="Wunderlampe Logo" 
             className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 animate-pulse brightness-110" 
           />
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-gold mb-4 animate-fade-in leading-tight">

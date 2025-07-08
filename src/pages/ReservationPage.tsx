@@ -89,7 +89,7 @@ export default function ReservationPage() {
             {t('makeReservation')}
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-light-gray font-body max-w-2xl mx-auto px-2">
-            Reserve your table for an unforgettable evening at Wunder Lampe
+            Reserve your table for an unforgettable evening at Wunderlampe
           </p>
         </div>
 
