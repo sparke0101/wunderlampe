@@ -34,7 +34,6 @@ export default function Hero({ onPageChange }: HeroProps) {
             className="w-16 h-16 mx-auto mb-4 animate-pulse brightness-110" 
           />
           <h1 className="text-6xl md:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gold via-yellow-400 to-gold mb-4 animate-fade-in">
-          <h1 className="text-6xl md:text-8xl font-display font-bold text-gold mb-4 animate-fade-in">
             {t('heroTitle')}
           </h1>
           <p className="text-2xl md:text-3xl text-soft-blue-white font-body font-light mb-6 animate-fade-in-delay">
