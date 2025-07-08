@@ -297,11 +297,6 @@ export default function Menu() {
               <p className="text-light-gray font-body group-hover:text-white transition-colors duration-300 text-sm sm:text-base md:text-lg leading-relaxed mb-3 sm:mb-4">
                 {item.description}
               </p>
-              <div className="flex justify-end">
-                <button className="text-gold hover:text-gold-light transition-colors duration-300 font-body font-medium text-sm sm:text-base md:text-lg py-2 px-3 rounded-lg hover:bg-gold/10 active:scale-95">
-                  Order Now →
-                </button>
-              </div>
             </div>
           ))}
         </div>
