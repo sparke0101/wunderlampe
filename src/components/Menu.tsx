@@ -274,8 +274,3 @@ export default function Menu() {
     </section>
   );
 }
-    }
-    )
-    }
-  )
-}
