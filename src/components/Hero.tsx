@@ -72,3 +72,5 @@ export default function Hero({ onPageChange }: HeroProps) {
     </section>
   );
 }
+  )
+}
