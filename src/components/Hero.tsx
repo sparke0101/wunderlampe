@@ -73,7 +73,7 @@ export default function Hero({ onPageChange }: HeroProps) {
             <h3 className="text-2xl font-display font-bold text-gold mb-6 text-center">Quick Menu Preview</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
-                { name: 'Shisha', price: '13€', image: '/WhatsApp%20Image%202025-07-08%20at%202.11.40%20PM.jpeg' },
+                { name: 'Shisha', price: '13€', image: '/close-up-hookah-vaping_23-2149297187.jpg' },
                 { name: 'Cocktails', price: '8.90€', image: '/tasty-alcoholic-coctails_1042628-549264.jpg' },
                 { name: 'Longdrinks', price: '7.50€', image: '/WhatsApp%20Image%202025-07-08%20at%203.36.54%20AM.jpeg' },
                 { name: 'Bottles', price: '90€', image: '/1000134193-removebg-preview.png' }
