@@ -59,7 +59,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-gold" />
-                <a href="mailto:info@wunderlampe.de" className="hover:text-gold transition-colors">info@wunderlampe.de</a>
+                <a href="mailto:info.wunderlampe@gmail.com" className="hover:text-gold transition-colors">info.wunderlampe@gmail.com</a>
               </div>
             </div>
           </div>
