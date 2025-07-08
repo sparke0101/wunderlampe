@@ -96,7 +96,7 @@ export default function Footer() {
               
               <div className="bg-white rounded-xl p-4 mb-4 inline-block">
                 <img 
-                  src="/WhatsApp%20Image%202025-07-08%20at%202.11.40%20PM.jpeg" 
+                  src="/WhatsApp%20Image%202025-07-08%20at%202.30.33%20PM.jpeg" 
                   alt="WhatsApp Group QR Code" 
                   className="w-48 h-48 mx-auto"
                 />
