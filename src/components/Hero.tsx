@@ -13,7 +13,7 @@ export default function Hero({ onPageChange }: HeroProps) {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950">
-        <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/1123982/pexels-photo-1123982.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080')] bg-cover bg-center opacity-30" />
+        <div className="absolute inset-0 bg-[url('/WhatsApp%20Image%202025-07-08%20at%203.36.54%20AM.jpeg')] bg-cover bg-center opacity-40" />
         <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-transparent to-gray-950/50" />
       </div>
 
