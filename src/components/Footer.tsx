@@ -90,11 +90,11 @@ export default function Footer() {
             <div className="bg-gradient-to-br from-gray-900 to-gray-950 border-2 border-gold/30 rounded-2xl p-4 sm:p-6 md:p-8 max-w-md mx-auto">
               <h3 className="text-xl sm:text-2xl font-display font-bold text-gold mb-3 sm:mb-4">Join Our Community</h3>
               <p className="text-sm sm:text-base text-light-gray font-body mb-4 sm:mb-6">
-                Connect with fellow shisha enthusiasts and stay updated with exclusive offers
+                Vernetzen Sie sich mit anderen Shisha-Fans und erhalten Sie exklusive Angebote.
               </p>
               
               <p className="text-sm sm:text-base text-light-gray font-body mb-4 sm:mb-6">
-                Be part of our exclusive community where we share special offers, events, and connect with fellow enthusiasts.
+                Werden Sie Teil unserer exklusiven Community. Wir teilen Sonderangebote und Events und vernetzen uns mit anderen Shisha-Fans.
               </p>
               
               <a
