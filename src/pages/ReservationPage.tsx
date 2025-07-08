@@ -4,6 +4,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 
 export default function ReservationPage() {
   const { t } = useLanguage();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -16,48 +17,40 @@ export default function ReservationPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Create email body with reservation details
-    const emailBody = `
-New Reservation Request from Wunder Lampe Website
+    setIsSubmitting(true);
 
-Customer Details:
-- Name: ${formData.name}
-- Email: ${formData.email}
-- Phone: ${formData.phone}
-
-Reservation Details:
-- Date: ${formData.date}
-- Time: ${formData.time}
-- Number of Guests: ${formData.guests}
-
-Special Requests:
-${formData.message || 'None'}
-
----
-This reservation was submitted through the Wunder Lampe website.
-Please contact the customer to confirm the reservation.
-    `.trim();
-
-    // Create mailto link
-    const subject = `New Reservation Request - ${formData.name} - ${formData.date}`;
-    const mailtoLink = `mailto:info.wunderlampe@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
-    
-    // Open email client
-    window.location.href = mailtoLink;
-    
-    // Show success message
-    alert('Your reservation request has been prepared for sending. Please send the email that just opened in your email client to complete your reservation request.');
-    
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      date: '',
-      time: '',
-      guests: '2',
-      message: ''
+    // Send reservation via API
+    fetch('/api/send-reservation', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        alert('Your reservation request has been sent successfully! We will contact you shortly to confirm your reservation.');
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          date: '',
+          time: '',
+          guests: '2',
+          message: ''
+        });
+      } else {
+        throw new Error(data.error || 'Failed to send reservation');
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('There was an error sending your reservation. Please try again or contact us directly.');
+    })
+    .finally(() => {
+      setIsSubmitting(false);
     });
   };
 
@@ -213,9 +206,10 @@ Please contact the customer to confirm the reservation.
             <div className="text-center">
               <button
                 type="submit"
-                className="w-full sm:w-auto px-8 sm:px-12 py-3 sm:py-4 bg-gold text-black font-body font-semibold rounded-lg transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-gold/50 hover:bg-gold-light active:scale-95 text-base sm:text-lg"
+                disabled={isSubmitting}
+                className="w-full sm:w-auto px-8 sm:px-12 py-3 sm:py-4 bg-gold text-black font-body font-semibold rounded-lg transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-gold/50 hover:bg-gold-light active:scale-95 text-base sm:text-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
               >
-                Confirm Reservation
+                {isSubmitting ? 'Sending...' : 'Confirm Reservation'}
               </button>
             </div>
           </form>

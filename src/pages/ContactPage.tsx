@@ -4,6 +4,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 
 export default function ContactPage() {
   const { t } = useLanguage();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -14,41 +15,38 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Create email body with contact details
-    const emailBody = `
-New Contact Message from Wunder Lampe Website
+    setIsSubmitting(true);
 
-Customer Details:
-- Name: ${formData.name}
-- Email: ${formData.email}
-- Phone: ${formData.phone || 'Not provided'}
-- Subject: ${formData.subject}
-
-Message:
-${formData.message}
-
----
-This message was submitted through the Wunder Lampe website contact form.
-    `.trim();
-
-    // Create mailto link
-    const subject = `Contact Form: ${formData.subject} - ${formData.name}`;
-    const mailtoLink = `mailto:info.wunderlampe@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
-    
-    // Open email client
-    window.location.href = mailtoLink;
-    
-    // Show success message
-    alert('Your message has been prepared for sending. Please send the email that just opened in your email client to complete your contact request.');
-    
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: ''
+    // Send contact message via API
+    fetch('/api/send-contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        alert('Your message has been sent successfully! We will get back to you within 24 hours.');
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: ''
+        });
+      } else {
+        throw new Error(data.error || 'Failed to send message');
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('There was an error sending your message. Please try again or contact us directly.');
+    })
+    .finally(() => {
+      setIsSubmitting(false);
     });
   };
 
@@ -215,10 +213,11 @@ This message was submitted through the Wunder Lampe website contact form.
 
               <button
                 type="submit"
-                className="w-full px-6 sm:px-8 py-3 sm:py-4 bg-gold text-black font-body font-semibold rounded-lg transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-gold/50 flex items-center justify-center space-x-2 hover:bg-gold-light active:scale-95 text-base sm:text-lg"
+                disabled={isSubmitting}
+                className="w-full px-6 sm:px-8 py-3 sm:py-4 bg-gold text-black font-body font-semibold rounded-lg transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-gold/50 flex items-center justify-center space-x-2 hover:bg-gold-light active:scale-95 text-base sm:text-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
               >
                 <Send className="w-5 h-5" />
-                <span>Send Message</span>
+                <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
               </button>
             </form>
           </div>
