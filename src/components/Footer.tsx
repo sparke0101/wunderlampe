@@ -101,7 +101,7 @@ export default function Footer() {
               </div>
             </div>
             <div className="text-light-gray font-body text-sm">
-              © 2024 Wunder Lampe. All rights reserved.
+              © 2025 Wunder Lampe. All rights reserved.
             </div>
           </div>
         </div>
