@@ -6,7 +6,6 @@ import Menu from './components/Menu';
 import Footer from './components/Footer';
 import LoadingSpinner from './components/LoadingSpinner';
 import ReservationPage from './pages/ReservationPage';
-import LocationPage from './pages/LocationPage';
 import ContactPage from './pages/ContactPage';
 
 function App() {
@@ -34,8 +33,6 @@ function App() {
         return <Menu />;
       case 'reservation':
         return <ReservationPage />;
-      case 'location':
-        return <LocationPage />;
       case 'contact':
         return <ContactPage />;
       default:

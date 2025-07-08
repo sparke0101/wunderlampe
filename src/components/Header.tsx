@@ -16,7 +16,6 @@ export default function Header({ currentPage, onPageChange }: HeaderProps) {
     { id: 'home', label: t('home') },
     { id: 'menu', label: t('menu') },
     { id: 'reservation', label: t('reservation') },
-    { id: 'location', label: t('location') },
     { id: 'contact', label: t('contact') },
   ];
 

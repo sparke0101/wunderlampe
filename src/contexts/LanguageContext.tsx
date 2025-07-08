@@ -17,7 +17,6 @@ const translations = {
     home: 'Startseite',
     menu: 'Menu',
     reservation: 'Reservierung',
-    location: 'Standort',
     contact: 'Kontakt',
     
     // Hero Section
@@ -56,7 +55,6 @@ const translations = {
     home: 'Home',
     menu: 'Menu',
     reservation: 'Reservation',
-    location: 'Location',
     contact: 'Contact',
     
     // Hero Section
