@@ -114,9 +114,8 @@ export default function ContactPage() {
                   <div>
                     <h4 className="text-white font-body font-semibold text-base sm:text-lg">Business Hours</h4>
                     <div className="text-light-gray font-body space-y-1 text-sm sm:text-base">
-                      <p>Monday - Thursday: 6:00 PM - 2:00 AM</p>
-                      <p>Friday - Saturday: 6:00 PM - 3:00 AM</p>
-                      <p>Sunday: 6:00 PM - 1:00 AM</p>
+                      <p>Montag-Freitag: 4:00 PM - 2:00 AM</p>
+                      <p>Wochenende: 4:00 PM - 4:00 AM</p>
                     </div>
                   </div>
                 </div>
