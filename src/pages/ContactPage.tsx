@@ -97,7 +97,7 @@ export default function ContactPage() {
                   <div>
                     <h4 className="text-white font-body font-semibold text-base sm:text-lg">Email</h4>
                     <a href="mailto:info.wunderlampe@gmail.com" className="text-light-gray font-body hover:text-gold transition-colors text-sm sm:text-base break-all">info.wunderlampe@gmail.com</a>
-                    <p className="text-gray-500 font-body text-xs sm:text-sm">We'll respond within 24 hours</p>
+                    <p className="text-gray-500 font-body text-xs sm:text-sm">Wir antworten innerhalb von 24 Stunden</p>
                   </div>
                 </div>
 
