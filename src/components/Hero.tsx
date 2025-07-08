@@ -74,7 +74,7 @@ export default function Hero({ onPageChange }: HeroProps) {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
                 { name: 'Shisha', price: '13€', image: '/WhatsApp%20Image%202025-07-08%20at%202.11.40%20PM.jpeg' },
-                { name: 'Cocktails', price: '8.90€', image: '/WhatsApp%20Image%202025-07-08%20at%202.30.33%20PM.jpeg' },
+                { name: 'Cocktails', price: '8.90€', image: '/tasty-alcoholic-coctails_1042628-549264.jpg' },
                 { name: 'Longdrinks', price: '7.50€', image: '/WhatsApp%20Image%202025-07-08%20at%203.36.54%20AM.jpeg' },
                 { name: 'Bottles', price: '90€', image: '/1000134193-removebg-preview.png' }
               ].map((item, index) => (
