@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, Clock } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Clock, CheckCircle, AlertCircle } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export default function ContactPage() {
   const { t } = useLanguage();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -13,27 +15,25 @@ export default function ContactPage() {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus('idle');
+    setErrorMessage('');
 
-    // Send contact message via API
-    fetch('/api/send-contact', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      return response.json();
-    })
-    .then(data => {
+    try {
+      const response = await fetch('/api/send-contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
       if (data.success) {
-        alert('Your message has been sent successfully! We will get back to you within 24 hours.');
+        setSubmitStatus('success');
         // Reset form
         setFormData({
           name: '',
@@ -45,18 +45,22 @@ export default function ContactPage() {
       } else {
         throw new Error(data.error || 'Failed to send message');
       }
-    })
-    .catch(error => {
+    } catch (error) {
       console.error('Error:', error);
-      if (error.message.includes('Failed to fetch') || error.message.includes('ECONNREFUSED')) {
-        alert('Unable to connect to the server. Please make sure the Supabase development server is running and try again.');
-      } else {
-        alert('There was an error sending your message. Please try again or contact us directly.');
-      }
-    })
-    .finally(() => {
+      setSubmitStatus('error');
+      setErrorMessage(error instanceof Error ? error.message : 'Failed to send message. Please try again.');
+    } finally {
       setIsSubmitting(false);
-    });
+    }
+  };
+
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+    // Clear status when user starts typing again
+    if (submitStatus !== 'idle') {
+      setSubmitStatus('idle');
+      setErrorMessage('');
+    }
   };
 
   return (
@@ -80,7 +84,7 @@ export default function ContactPage() {
               
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <Phone className="w-6 h-6 text-gold mt-1" />
+                  <Phone className="w-6 h-6 text-gold mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="text-white font-body font-semibold text-base sm:text-lg">Phone</h4>
                     <a href="tel:+4915788818885" className="text-light-gray font-body hover:text-gold transition-colors text-sm sm:text-base">+49 1578 8818885</a>
@@ -89,16 +93,16 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <Mail className="w-6 h-6 text-gold mt-1" />
+                  <Mail className="w-6 h-6 text-gold mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="text-white font-body font-semibold text-base sm:text-lg">Email</h4>
-                    <a href="mailto:info.wunderlampe@gmail.com" className="text-light-gray font-body hover:text-gold transition-colors text-sm sm:text-base">info.wunderlampe@gmail.com</a>
+                    <a href="mailto:info.wunderlampe@gmail.com" className="text-light-gray font-body hover:text-gold transition-colors text-sm sm:text-base break-all">info.wunderlampe@gmail.com</a>
                     <p className="text-gray-500 font-body text-xs sm:text-sm">We'll respond within 24 hours</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <MapPin className="w-6 h-6 text-gold mt-1" />
+                  <MapPin className="w-6 h-6 text-gold mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="text-white font-body font-semibold text-base sm:text-lg">Address</h4>
                     <p className="text-light-gray font-body text-sm sm:text-base">Eisenbahnstraße 98<br />04315 Leipzig, Germany</p>
@@ -106,7 +110,7 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <Clock className="w-6 h-6 text-gold mt-1" />
+                  <Clock className="w-6 h-6 text-gold mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="text-white font-body font-semibold text-base sm:text-lg">Business Hours</h4>
                     <div className="text-light-gray font-body space-y-1 text-sm sm:text-base">
@@ -125,23 +129,23 @@ export default function ContactPage() {
               
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-gold rounded-full"></div>
+                  <div className="w-2 h-2 bg-gold rounded-full flex-shrink-0"></div>
                   <span className="text-light-gray font-body text-sm sm:text-base">Private Events & Parties</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-gold rounded-full"></div>
+                  <div className="w-2 h-2 bg-gold rounded-full flex-shrink-0"></div>
                   <span className="text-light-gray font-body text-sm sm:text-base">Corporate Events</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-gold rounded-full"></div>
+                  <div className="w-2 h-2 bg-gold rounded-full flex-shrink-0"></div>
                   <span className="text-light-gray font-body text-sm sm:text-base">Birthday Celebrations</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-gold rounded-full"></div>
+                  <div className="w-2 h-2 bg-gold rounded-full flex-shrink-0"></div>
                   <span className="text-light-gray font-body text-sm sm:text-base">VIP Table Service</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-gold rounded-full"></div>
+                  <div className="w-2 h-2 bg-gold rounded-full flex-shrink-0"></div>
                   <span className="text-light-gray font-body text-sm sm:text-base">Catering Services</span>
                 </div>
               </div>
@@ -152,6 +156,21 @@ export default function ContactPage() {
           <div className="bg-gradient-to-br from-gray-900 to-gray-950 border-2 border-gold/30 rounded-2xl p-4 sm:p-6 md:p-8">
             <h3 className="text-2xl sm:text-3xl font-display font-bold text-gold mb-4 sm:mb-6">Send us a Message</h3>
             
+            {/* Status Messages */}
+            {submitStatus === 'success' && (
+              <div className="mb-6 p-4 bg-green-900/50 border border-green-500/50 rounded-lg flex items-center space-x-3">
+                <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
+                <p className="text-green-100 text-sm sm:text-base">Your message has been sent successfully! We'll get back to you within 24 hours.</p>
+              </div>
+            )}
+            
+            {submitStatus === 'error' && (
+              <div className="mb-6 p-4 bg-red-900/50 border border-red-500/50 rounded-lg flex items-center space-x-3">
+                <AlertCircle className="w-5 h-5 text-red-400 flex-shrink-0" />
+                <p className="text-red-100 text-sm sm:text-base">{errorMessage}</p>
+              </div>
+            )}
+            
             <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <div>
@@ -160,9 +179,10 @@ export default function ContactPage() {
                     type="text"
                     required
                     value={formData.name}
-                    onChange={(e) => setFormData({...formData, name: e.target.value})}
+                    onChange={(e) => handleInputChange('name', e.target.value)}
                     className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-900 border border-gold/30 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-gold transition-colors duration-300 text-sm sm:text-base"
                     placeholder="Your full name"
+                    disabled={isSubmitting}
                   />
                 </div>
 
@@ -172,9 +192,10 @@ export default function ContactPage() {
                     type="email"
                     required
                     value={formData.email}
-                    onChange={(e) => setFormData({...formData, email: e.target.value})}
+                    onChange={(e) => handleInputChange('email', e.target.value)}
                     className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-900 border border-gold/30 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-gold transition-colors duration-300 text-sm sm:text-base"
                     placeholder="your@email.com"
+                    disabled={isSubmitting}
                   />
                 </div>
               </div>
@@ -185,9 +206,10 @@ export default function ContactPage() {
                   <input
                     type="tel"
                     value={formData.phone}
-                    onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                    onChange={(e) => handleInputChange('phone', e.target.value)}
                     className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-900 border border-gold/30 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-gold transition-colors duration-300 text-sm sm:text-base"
                     placeholder="Your phone number"
+                    disabled={isSubmitting}
                   />
                 </div>
 
@@ -196,8 +218,9 @@ export default function ContactPage() {
                   <select
                     required
                     value={formData.subject}
-                    onChange={(e) => setFormData({...formData, subject: e.target.value})}
+                    onChange={(e) => handleInputChange('subject', e.target.value)}
                     className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-900 border border-gold/30 rounded-lg text-white focus:outline-none focus:border-gold transition-colors duration-300 text-sm sm:text-base"
+                    disabled={isSubmitting}
                   >
                     <option value="">Select a subject</option>
                     <option value="reservation">Reservation</option>
@@ -214,9 +237,10 @@ export default function ContactPage() {
                   required
                   rows={4}
                   value={formData.message}
-                  onChange={(e) => setFormData({...formData, message: e.target.value})}
+                  onChange={(e) => handleInputChange('message', e.target.value)}
                   className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-900 border border-gold/30 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-gold transition-colors duration-300 text-sm sm:text-base resize-none"
                   placeholder="Tell us how we can help you..."
+                  disabled={isSubmitting}
                 />
               </div>
 
