@@ -32,7 +32,7 @@ export default function LocationPage() {
                   <MapPin className="w-5 h-5 text-gold mt-1" />
                   <div>
                     <h4 className="text-white font-body font-semibold">Address</h4>
-                    <p className="text-light-gray font-body">Hauptstraße 123<br />12345 Berlin, Germany</p>
+                    <p className="text-light-gray font-body">Eisenbahnstraße 98<br />04315 Leipzig, Germany</p>
                   </div>
                 </div>
 
@@ -40,7 +40,7 @@ export default function LocationPage() {
                   <Phone className="w-5 h-5 text-gold mt-1" />
                   <div>
                     <h4 className="text-white font-body font-semibold">Phone</h4>
-                    <p className="text-light-gray font-body">+49 (0) 123 456 789</p>
+                    <p className="text-light-gray font-body">+49 1578 8818885</p>
                   </div>
                 </div>
 
@@ -112,7 +112,7 @@ export default function LocationPage() {
               <div className="text-center">
                 <MapPin className="w-16 h-16 text-gold mx-auto mb-4" />
                 <p className="text-light-gray font-body">Interactive map will be displayed here</p>
-                <p className="text-gray-500 font-body text-sm mt-2">Hauptstraße 123, 12345 Berlin</p>
+                <p className="text-gray-500 font-body text-sm mt-2">Eisenbahnstraße 98, 04315 Leipzig</p>
               </div>
             </div>
 
@@ -121,20 +121,20 @@ export default function LocationPage() {
               <h4 className="text-white font-body font-semibold mb-4">Nearby Landmarks</h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="bg-gray-900 rounded-lg p-4">
-                  <h5 className="text-gold font-body font-medium">Potsdamer Platz</h5>
-                  <p className="text-light-gray font-body text-sm">8 min walk</p>
+                  <h5 className="text-gold font-body font-medium">Leipzig Hauptbahnhof</h5>
+                  <p className="text-light-gray font-body text-sm">10 min walk</p>
                 </div>
                 <div className="bg-gray-900 rounded-lg p-4">
-                  <h5 className="text-gold font-body font-medium">Brandenburg Gate</h5>
+                  <h5 className="text-gold font-body font-medium">Augustusplatz</h5>
                   <p className="text-light-gray font-body text-sm">15 min walk</p>
                 </div>
                 <div className="bg-gray-900 rounded-lg p-4">
-                  <h5 className="text-gold font-body font-medium">Checkpoint Charlie</h5>
+                  <h5 className="text-gold font-body font-medium">Völkerschlachtdenkmal</h5>
                   <p className="text-light-gray font-body text-sm">12 min walk</p>
                 </div>
                 <div className="bg-gray-900 rounded-lg p-4">
-                  <h5 className="text-gold font-body font-medium">Mall of Berlin</h5>
-                  <p className="text-light-gray font-body text-sm">10 min walk</p>
+                  <h5 className="text-gold font-body font-medium">Promenaden Hauptbahnhof</h5>
+                  <p className="text-light-gray font-body text-sm">8 min walk</p>
                 </div>
               </div>
             </div>

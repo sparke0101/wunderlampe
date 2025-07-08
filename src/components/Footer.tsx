@@ -52,11 +52,11 @@ export default function Footer() {
             <div className="space-y-3 text-light-gray font-body">
               <div className="flex items-center space-x-3">
                 <MapPin className="w-4 h-4 text-gold" />
-                <span>Hauptstraße 123, 12345 Berlin</span>
+                <span>Eisenbahnstraße 98, 04315 Leipzig</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-gold" />
-                <span>+49 (0) 123 456 789</span>
+                <span>+49 1578 8818885</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-gold" />

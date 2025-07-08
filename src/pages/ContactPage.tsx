@@ -42,7 +42,7 @@ export default function ContactPage() {
                   <Phone className="w-6 h-6 text-gold mt-1" />
                   <div>
                     <h4 className="text-white font-body font-semibold text-lg">Phone</h4>
-                    <p className="text-light-gray font-body">+49 (0) 123 456 789</p>
+                    <p className="text-light-gray font-body">+49 1578 8818885</p>
                     <p className="text-gray-500 font-body text-sm">Available during business hours</p>
                   </div>
                 </div>
@@ -60,7 +60,7 @@ export default function ContactPage() {
                   <MapPin className="w-6 h-6 text-gold mt-1" />
                   <div>
                     <h4 className="text-white font-body font-semibold text-lg">Address</h4>
-                    <p className="text-light-gray font-body">Hauptstraße 123<br />12345 Berlin, Germany</p>
+                    <p className="text-light-gray font-body">Eisenbahnstraße 98<br />04315 Leipzig, Germany</p>
                   </div>
                 </div>
 
