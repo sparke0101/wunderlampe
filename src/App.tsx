@@ -13,13 +13,33 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    // Close mobile menu and language menu when clicking outside
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Element;
+      if (!target.closest('.mobile-menu') && !target.closest('.language-menu')) {
+        // This will be handled by the Header component
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+    
     // Simulate loading time for better UX
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 1500);
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      document.removeEventListener('click', handleClickOutside);
+    };
   }, []);
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      document.body.style.overflow = isLoading ? 'hidden' : 'auto';
+    }
+  }, [isLoading]);
 
   if (isLoading) {
     return <LoadingSpinner />;

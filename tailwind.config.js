@@ -31,7 +31,7 @@ export default {
         sans: ['Lato', 'system-ui', 'sans-serif'],
       },
       fontSize: {
-        'base': '18px', // Increased base font size for better mobile readability
+        'base': '16px', // Optimized base font size for mobile
         'lg': '20px',
         'xl': '22px',
         '2xl': '26px',
@@ -41,6 +41,14 @@ export default {
         '6xl': '60px',
         '7xl': '72px',
         '8xl': '96px',
+      },
+      screens: {
+        'xs': '475px',
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1536px',
       },
     },
   },

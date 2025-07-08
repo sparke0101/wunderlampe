@@ -26,39 +26,39 @@ export default function Hero({ onPageChange }: HeroProps) {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+      <div className="relative z-10 text-center px-4 sm:px-6 max-w-4xl mx-auto">
         <div className="mb-8">
           <img 
             src="/1000134193-removebg-preview.png" 
             alt="Wunder Lampe Logo" 
-            className="w-16 h-16 mx-auto mb-4 animate-pulse brightness-110" 
+            className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 animate-pulse brightness-110" 
           />
-          <h1 className="text-5xl md:text-7xl font-display font-bold text-gold mb-4 animate-fade-in">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-gold mb-4 animate-fade-in leading-tight">
             {t('heroTitle')}
           </h1>
-          <p className="text-xl md:text-2xl text-soft-blue-white font-body font-light mb-6 animate-fade-in-delay">
+          <p className="text-lg sm:text-xl md:text-2xl text-soft-blue-white font-body font-light mb-6 animate-fade-in-delay leading-relaxed">
             {t('heroTagline')}
           </p>
         </div>
 
-        <p className="text-lg md:text-xl text-light-gray font-body mb-8 max-w-2xl mx-auto leading-relaxed animate-fade-in-delay-2">
+        <p className="text-base sm:text-lg md:text-xl text-light-gray font-body mb-8 max-w-2xl mx-auto leading-relaxed animate-fade-in-delay-2 px-2">
           {t('heroDescription')}
         </p>
 
         {/* Primary CTA - View Menu */}
-        <div className="mb-12 animate-fade-in-delay-3">
+        <div className="mb-12 animate-fade-in-delay-3 space-y-4">
           <button
             onClick={() => onPageChange('menu')}
-            className="group w-full sm:w-auto px-12 py-5 bg-gold text-black font-body font-bold text-xl rounded-xl transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-gold/50 flex items-center justify-center space-x-3 hover:bg-gold-light mb-4"
+            className="group w-full sm:w-auto px-8 sm:px-12 py-4 sm:py-5 bg-gold text-black font-body font-bold text-lg sm:text-xl rounded-xl transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-gold/50 flex items-center justify-center space-x-3 hover:bg-gold-light"
           >
-            <MenuIcon className="w-6 h-6" />
+            <MenuIcon className="w-5 h-5 sm:w-6 sm:h-6" />
             <span>{t('viewMenu')}</span>
-            <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
+            <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-1 transition-transform duration-300" />
           </button>
           
           <button
             onClick={() => onPageChange('reservation')}
-            className="group w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-gold text-white font-body font-semibold text-lg rounded-xl hover:bg-gold hover:text-black transition-all duration-300 flex items-center justify-center space-x-2"
+            className="group w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-transparent border-2 border-gold text-white font-body font-semibold text-base sm:text-lg rounded-xl hover:bg-gold hover:text-black transition-all duration-300 flex items-center justify-center space-x-2"
           >
             <span>{t('makeReservation')}</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
@@ -67,11 +67,11 @@ export default function Hero({ onPageChange }: HeroProps) {
       </div>
 
       {/* Quick Menu Preview */}
-      <div className="relative z-10 px-4 pb-20">
+      <div className="relative z-10 px-4 sm:px-6 pb-20">
         <div className="container mx-auto max-w-4xl">
-          <div className="bg-gray-900/80 backdrop-blur-md border border-gold/30 rounded-2xl p-6">
-            <h3 className="text-2xl font-display font-bold text-gold mb-6 text-center">Quick Menu Preview</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="bg-gray-900/80 backdrop-blur-md border border-gold/30 rounded-2xl p-4 sm:p-6">
+            <h3 className="text-xl sm:text-2xl font-display font-bold text-gold mb-4 sm:mb-6 text-center">Quick Menu Preview</h3>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
               {[
                 { name: 'Shisha', price: '13€', image: '/close-up-hookah-vaping_23-2149297187.jpg' },
                 { name: 'Cocktails', price: '8.90€', image: '/tasty-alcoholic-coctails_1042628-549264 copy.jpg' },
@@ -81,25 +81,25 @@ export default function Hero({ onPageChange }: HeroProps) {
                 <div 
                   key={index}
                   onClick={() => onPageChange('menu')}
-                  className="bg-gray-800/60 rounded-xl p-4 text-center cursor-pointer hover:bg-gold/20 transition-all duration-300 transform hover:scale-105"
+                  className="bg-gray-800/60 rounded-xl p-3 sm:p-4 text-center cursor-pointer hover:bg-gold/20 transition-all duration-300 transform hover:scale-105 active:scale-95"
                 >
-                  <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-gold/20 flex items-center justify-center overflow-hidden">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-2 sm:mb-3 rounded-full bg-gold/20 flex items-center justify-center overflow-hidden">
                     <img 
                       src={item.image} 
                       alt={item.name}
-                      className="w-12 h-12 object-cover rounded-full"
+                      className="w-8 h-8 sm:w-12 sm:h-12 object-cover rounded-full"
                       loading="lazy"
                     />
                   </div>
-                  <h4 className="text-white font-body font-semibold text-lg mb-1">{item.name}</h4>
-                  <p className="text-gold font-body font-bold">from {item.price}</p>
+                  <h4 className="text-white font-body font-semibold text-sm sm:text-lg mb-1">{item.name}</h4>
+                  <p className="text-gold font-body font-bold text-xs sm:text-base">from {item.price}</p>
                 </div>
               ))}
             </div>
-            <div className="text-center mt-6">
+            <div className="text-center mt-4 sm:mt-6">
               <button
                 onClick={() => onPageChange('menu')}
-                className="text-gold hover:text-gold-light font-body font-medium text-lg transition-colors duration-300"
+                className="text-gold hover:text-gold-light font-body font-medium text-base sm:text-lg transition-colors duration-300 py-2 px-4 rounded-lg hover:bg-gold/10"
               >
                 View Full Menu →
               </button>

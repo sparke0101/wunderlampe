@@ -224,22 +224,22 @@ export default function Menu() {
   const currentCategory = categories.find(cat => cat.id === activeCategory);
 
   return (
-    <section className="min-h-screen bg-gray-950 py-20 px-4">
+    <section className="min-h-screen bg-gray-950 py-16 sm:py-20 px-4 sm:px-6">
       <div className="container mx-auto max-w-6xl">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-gold mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-gold mb-4">
             {t('menu')}
           </h2>
-          <p className="text-xl text-light-gray font-body max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-light-gray font-body max-w-2xl mx-auto px-2">
             Discover our premium selection of cocktails, shisha, and fine beverages
           </p>
         </div>
 
         {/* Category Header Image */}
         {currentCategory?.image && (
-          <div className="mb-8">
-            <div className="relative h-48 md:h-64 rounded-2xl overflow-hidden">
+          <div className="mb-6 sm:mb-8">
+            <div className="relative h-40 sm:h-48 md:h-64 rounded-2xl overflow-hidden">
               <img 
                 src={currentCategory.image} 
                 alt={currentCategory.label}
@@ -247,8 +247,8 @@ export default function Menu() {
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-gray-950/85 via-gray-950/30 to-transparent" />
-              <div className="absolute bottom-4 left-4">
-                <h3 className="text-3xl md:text-4xl font-display font-bold text-white">
+              <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-white">
                   {currentCategory.label}
                 </h3>
               </div>
@@ -257,17 +257,17 @@ export default function Menu() {
         )}
 
         {/* Category Tabs */}
-        <div className="mb-12">
-          <div className="flex flex-wrap justify-center gap-2 mb-8">
+        <div className="mb-8 sm:mb-12">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-6 sm:mb-8 px-2">
             {categories.map((category) => {
               const Icon = category.icon;
               return (
                 <button
                   key={category.id}
                   onClick={() => setActiveCategory(category.id)}
-                  className={`flex items-center space-x-2 px-4 py-3 rounded-xl font-body font-medium transition-all duration-300 text-lg ${
+                  className={`flex items-center space-x-1 sm:space-x-2 px-3 sm:px-4 py-2 sm:py-3 rounded-xl font-body font-medium transition-all duration-300 text-sm sm:text-base md:text-lg active:scale-95 ${
                     activeCategory === category.id
-                      ? 'bg-gold text-black shadow-lg shadow-gold/30'
+                      ? 'bg-gold text-black shadow-lg shadow-gold/30 scale-105'
                       : 'bg-gray-900 text-light-gray hover:bg-gold/20 hover:text-gold border border-gold/20'
                   }`}
                 >
@@ -280,25 +280,25 @@ export default function Menu() {
         </div>
 
         {/* Menu Items Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {currentItems.map((item, index) => (
             <div
               key={index}
-              className="group bg-gradient-to-br from-gray-900 to-gray-950 border-2 border-gold/30 rounded-xl p-6 hover:border-gold transition-all duration-300 hover:shadow-xl hover:shadow-gold/20 transform hover:-translate-y-2"
+              className="group bg-gradient-to-br from-gray-900 to-gray-950 border-2 border-gold/30 rounded-xl p-4 sm:p-6 hover:border-gold transition-all duration-300 hover:shadow-xl hover:shadow-gold/20 transform hover:-translate-y-2 active:scale-95"
             >
-              <div className="flex justify-between items-start mb-4">
-                <h3 className="text-xl font-body font-semibold text-white group-hover:text-gold transition-colors duration-300 leading-tight">
+              <div className="flex justify-between items-start mb-3 sm:mb-4">
+                <h3 className="text-lg sm:text-xl font-body font-semibold text-white group-hover:text-gold transition-colors duration-300 leading-tight flex-1 pr-2">
                   {item.name}
                 </h3>
-                <span className="text-2xl font-body font-bold text-gold bg-gold/10 px-3 py-1 rounded-full ml-2 flex-shrink-0">
+                <span className="text-lg sm:text-xl md:text-2xl font-body font-bold text-gold bg-gold/10 px-2 sm:px-3 py-1 rounded-full flex-shrink-0">
                   {item.price}
                 </span>
               </div>
-              <p className="text-light-gray font-body group-hover:text-white transition-colors duration-300 text-lg leading-relaxed">
+              <p className="text-light-gray font-body group-hover:text-white transition-colors duration-300 text-sm sm:text-base md:text-lg leading-relaxed mb-3 sm:mb-4">
                 {item.description}
               </p>
-              <div className="mt-4 flex justify-end">
-                <button className="text-gold hover:text-gold-light transition-colors duration-300 font-body font-medium text-lg">
+              <div className="flex justify-end">
+                <button className="text-gold hover:text-gold-light transition-colors duration-300 font-body font-medium text-sm sm:text-base md:text-lg py-2 px-3 rounded-lg hover:bg-gold/10 active:scale-95">
                   Order Now →
                 </button>
               </div>

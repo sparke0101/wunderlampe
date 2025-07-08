@@ -37,22 +37,20 @@ export default function Header({ currentPage, onPageChange }: HeaderProps) {
             <img 
               src="/1000134193-removebg-preview.png" 
               alt="Wunder Lampe Logo" 
-              className="w-8 h-8 group-hover:brightness-125 transition-all duration-300" 
+              className="w-8 h-8 sm:w-10 sm:h-10 group-hover:brightness-125 transition-all duration-300" 
             />
-            <span className="text-2xl font-bold text-gold group-hover:text-neon-cyan transition-colors duration-300">
-            <span className="text-2xl font-display font-bold text-gold group-hover:text-soft-blue-white transition-colors duration-300">
+            <span className="text-xl sm:text-2xl font-display font-bold text-gold group-hover:text-soft-blue-white transition-colors duration-300">
               Wunder Lampe
-            </span>
             </span>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => onPageChange(item.id)}
-                className={`text-lg font-body font-medium transition-all duration-300 hover:text-gold relative group ${
+                className={`text-base lg:text-lg font-body font-medium transition-all duration-300 hover:text-gold relative group ${
                   currentPage === item.id ? 'text-gold' : 'text-white'
                 }`}
               >
@@ -65,21 +63,21 @@ export default function Header({ currentPage, onPageChange }: HeaderProps) {
           </nav>
 
           {/* Language Selector & Mobile Menu */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2 sm:space-x-4">
             {/* Language Selector */}
             <div className="relative">
               <button
                 onClick={() => setIsLanguageMenuOpen(!isLanguageMenuOpen)}
-                className="flex items-center space-x-2 text-white hover:text-gold transition-colors duration-300"
+                className="flex items-center space-x-1 sm:space-x-2 text-white hover:text-gold transition-colors duration-300 p-2"
               >
-                <Globe className="w-5 h-5" />
-                <span className="text-sm font-medium">
+                <Globe className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span className="text-xs sm:text-sm font-medium">
                   {languages.find(lang => lang.code === language)?.flag}
                 </span>
               </button>
               
               {isLanguageMenuOpen && (
-                <div className="absolute right-0 mt-2 w-48 bg-gray-950/98 backdrop-blur-md border border-gold/20 rounded-lg shadow-xl">
+                <div className="absolute right-0 mt-2 w-40 sm:w-48 bg-gray-950/98 backdrop-blur-md border border-gold/20 rounded-lg shadow-xl z-50">
                   {languages.map((lang) => (
                     <button
                       key={lang.code}
@@ -87,7 +85,7 @@ export default function Header({ currentPage, onPageChange }: HeaderProps) {
                         setLanguage(lang.code as any);
                         setIsLanguageMenuOpen(false);
                       }}
-                      className={`w-full text-left px-4 py-2 text-sm transition-colors duration-300 flex items-center space-x-2 ${
+                      className={`w-full text-left px-3 sm:px-4 py-2 text-xs sm:text-sm transition-colors duration-300 flex items-center space-x-2 ${
                         language === lang.code 
                           ? 'text-gold bg-gold/10' 
                           : 'text-white hover:text-gold hover:bg-gold/5'
@@ -104,7 +102,7 @@ export default function Header({ currentPage, onPageChange }: HeaderProps) {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden text-white hover:text-gold transition-colors duration-300"
+              className="lg:hidden text-white hover:text-gold transition-colors duration-300 p-2"
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <MenuIcon className="w-6 h-6" />}
             </button>
@@ -113,7 +111,7 @@ export default function Header({ currentPage, onPageChange }: HeaderProps) {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden mt-4 pt-4 border-t border-gold/20">
+          <nav className="lg:hidden mt-4 pt-4 border-t border-gold/20">
             <div className="flex flex-col space-y-2">
               {navItems.map((item) => (
                 <button
@@ -122,7 +120,7 @@ export default function Header({ currentPage, onPageChange }: HeaderProps) {
                     onPageChange(item.id);
                     setIsMenuOpen(false);
                   }}
-                  className={`text-left py-2 text-lg font-body font-medium transition-colors duration-300 ${
+                  className={`text-left py-3 px-2 text-lg font-body font-medium transition-colors duration-300 rounded-lg ${
                     currentPage === item.id ? 'text-gold' : 'text-white hover:text-gold'
                   }`}
                 >
