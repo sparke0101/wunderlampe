@@ -231,6 +231,7 @@ export default function Menu() {
                   key={category.id}
                   onClick={() => setActiveCategory(category.id)}
                   className={`flex items-center space-x-2 px-4 py-3 rounded-lg font-medium transition-all duration-300 ${
+                  }
                   className={`flex items-center space-x-2 px-4 py-3 rounded-lg font-body font-medium transition-all duration-300 ${
                     activeCategory === category.id
                       ? 'bg-gold text-black shadow-lg shadow-gold/30'
@@ -274,4 +275,9 @@ export default function Menu() {
       </div>
     </section>
   );
+}
+    }
+    )
+    }
+  )
 }
