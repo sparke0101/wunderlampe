@@ -80,7 +80,7 @@ export default function ContactPage() {
           {/* Contact Information */}
           <div className="space-y-8">
             <div className="bg-gradient-to-br from-gray-900 to-gray-950 border-2 border-gold/30 rounded-2xl p-4 sm:p-6 md:p-8">
-              <h3 className="text-2xl sm:text-3xl font-display font-bold text-gold mb-4 sm:mb-6">Get in Touch</h3>
+              <h3 className="text-2xl sm:text-3xl font-display font-bold text-gold mb-4 sm:mb-6">Nehmen Sie Kontakt auf</h3>
               
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
