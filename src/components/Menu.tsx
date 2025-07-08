@@ -29,7 +29,7 @@ export default function Menu() {
       id: 'longdrinks', 
       label: t('longdrinks'), 
       icon: Martini,
-      image: '/WhatsApp%20Image%202025-07-08%20at%203.36.54%20AM.jpeg'
+      image: '/set-classic-cold-alcoholic-cocktails-white-russian-bramble-whiskey-sour-negroni_400928-290.jpg'
     },
     { id: 'softdrinks', label: t('softdrinks'), icon: Droplets },
     { id: 'hotDrinks', label: t('hotDrinks'), icon: Coffee },
