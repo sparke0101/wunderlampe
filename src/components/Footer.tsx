@@ -6,7 +6,7 @@ export default function Footer() {
   const { t } = useLanguage();
 
   return (
-    <footer className="bg-gradient-to-t from-black via-gray-900 to-black border-t border-gold/20">
+    <footer className="bg-gradient-to-t from-gray-950 via-gray-900 to-gray-950 border-t border-gold/20">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
@@ -78,7 +78,7 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder={t('newsletterPlaceholder')}
-                className="flex-1 px-4 py-2 bg-gray-800 border border-gold/30 rounded-l-lg text-white placeholder-gray-500 focus:outline-none focus:border-gold"
+                className="flex-1 px-4 py-2 bg-gray-900 border border-gold/30 rounded-l-lg text-white placeholder-gray-500 focus:outline-none focus:border-gold"
               />
               <button className="px-4 py-2 bg-gradient-to-r from-gold to-yellow-500 text-black font-medium rounded-r-lg hover:from-yellow-500 hover:to-gold transition-all duration-300">
                 {t('subscribe')}

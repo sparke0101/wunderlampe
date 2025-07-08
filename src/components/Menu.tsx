@@ -190,7 +190,7 @@ export default function Menu() {
   const currentItems = menuItems[activeCategory as keyof typeof menuItems] || menuItems.cocktails;
 
   return (
-    <section className="min-h-screen bg-black py-20 px-4">
+    <section className="min-h-screen bg-gray-950 py-20 px-4">
       <div className="container mx-auto max-w-6xl">
         {/* Header */}
         <div className="text-center mb-12">
@@ -214,7 +214,7 @@ export default function Menu() {
                   className={`flex items-center space-x-2 px-4 py-3 rounded-lg font-medium transition-all duration-300 ${
                     activeCategory === category.id
                       ? 'bg-gradient-to-r from-gold to-yellow-500 text-black shadow-lg shadow-gold/30'
-                      : 'bg-gray-800 text-gray-300 hover:bg-gold/20 hover:text-gold border border-gold/20'
+                      : 'bg-gray-900 text-gray-300 hover:bg-gold/20 hover:text-gold border border-gold/20'
                   }`}
                 >
                   <Icon className="w-5 h-5" />
@@ -230,7 +230,7 @@ export default function Menu() {
           {currentItems.map((item, index) => (
             <div
               key={index}
-              className="group bg-gradient-to-br from-gray-900 to-black border-2 border-gold/30 rounded-xl p-6 hover:border-gold transition-all duration-300 hover:shadow-xl hover:shadow-gold/20 transform hover:-translate-y-2"
+              className="group bg-gradient-to-br from-gray-900 to-gray-950 border-2 border-gold/30 rounded-xl p-6 hover:border-gold transition-all duration-300 hover:shadow-xl hover:shadow-gold/20 transform hover:-translate-y-2"
             >
               <div className="flex justify-between items-start mb-4">
                 <h3 className="text-xl font-semibold text-white group-hover:text-gold transition-colors duration-300">

@@ -19,7 +19,7 @@ export default function ContactPage() {
   };
 
   return (
-    <section className="min-h-screen bg-black py-20 px-4">
+    <section className="min-h-screen bg-gray-950 py-20 px-4">
       <div className="container mx-auto max-w-6xl">
         {/* Header */}
         <div className="text-center mb-12">
@@ -34,7 +34,7 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div className="space-y-8">
-            <div className="bg-gradient-to-br from-gray-900 to-black border-2 border-gold/30 rounded-2xl p-8">
+            <div className="bg-gradient-to-br from-gray-900 to-gray-950 border-2 border-gold/30 rounded-2xl p-8">
               <h3 className="text-3xl font-bold text-gold mb-6">Get in Touch</h3>
               
               <div className="space-y-6">
@@ -79,7 +79,7 @@ export default function ContactPage() {
             </div>
 
             {/* Special Services */}
-            <div className="bg-gradient-to-br from-gray-900 to-black border-2 border-gold/30 rounded-2xl p-8">
+            <div className="bg-gradient-to-br from-gray-900 to-gray-950 border-2 border-gold/30 rounded-2xl p-8">
               <h3 className="text-2xl font-bold text-gold mb-6">Special Services</h3>
               
               <div className="space-y-4">
@@ -108,7 +108,7 @@ export default function ContactPage() {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-gradient-to-br from-gray-900 to-black border-2 border-gold/30 rounded-2xl p-8">
+          <div className="bg-gradient-to-br from-gray-900 to-gray-950 border-2 border-gold/30 rounded-2xl p-8">
             <h3 className="text-3xl font-bold text-gold mb-6">Send us a Message</h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -120,7 +120,7 @@ export default function ContactPage() {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({...formData, name: e.target.value})}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gold/30 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-gold transition-colors duration-300"
+                    className="w-full px-4 py-3 bg-gray-900 border border-gold/30 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-gold transition-colors duration-300"
                     placeholder="Your full name"
                   />
                 </div>
@@ -132,7 +132,7 @@ export default function ContactPage() {
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({...formData, email: e.target.value})}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gold/30 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-gold transition-colors duration-300"
+                    className="w-full px-4 py-3 bg-gray-900 border border-gold/30 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-gold transition-colors duration-300"
                     placeholder="your@email.com"
                   />
                 </div>
@@ -145,7 +145,7 @@ export default function ContactPage() {
                     type="tel"
                     value={formData.phone}
                     onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gold/30 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-gold transition-colors duration-300"
+                    className="w-full px-4 py-3 bg-gray-900 border border-gold/30 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-gold transition-colors duration-300"
                     placeholder="Your phone number"
                   />
                 </div>
@@ -156,7 +156,7 @@ export default function ContactPage() {
                     required
                     value={formData.subject}
                     onChange={(e) => setFormData({...formData, subject: e.target.value})}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gold/30 rounded-lg text-white focus:outline-none focus:border-gold transition-colors duration-300"
+                    className="w-full px-4 py-3 bg-gray-900 border border-gold/30 rounded-lg text-white focus:outline-none focus:border-gold transition-colors duration-300"
                   >
                     <option value="">Select a subject</option>
                     <option value="reservation">Reservation</option>
@@ -174,7 +174,7 @@ export default function ContactPage() {
                   rows={6}
                   value={formData.message}
                   onChange={(e) => setFormData({...formData, message: e.target.value})}
-                  className="w-full px-4 py-3 bg-gray-800 border border-gold/30 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-gold transition-colors duration-300"
+                  className="w-full px-4 py-3 bg-gray-900 border border-gold/30 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-gold transition-colors duration-300"
                   placeholder="Tell us how we can help you..."
                 />
               </div>

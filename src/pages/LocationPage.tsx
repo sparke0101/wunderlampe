@@ -6,7 +6,7 @@ export default function LocationPage() {
   const { t } = useLanguage();
 
   return (
-    <section className="min-h-screen bg-black py-20 px-4">
+    <section className="min-h-screen bg-gray-950 py-20 px-4">
       <div className="container mx-auto max-w-6xl">
         {/* Header */}
         <div className="text-center mb-12">
@@ -21,7 +21,7 @@ export default function LocationPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div className="space-y-8">
-            <div className="bg-gradient-to-br from-gray-900 to-black border-2 border-gold/30 rounded-2xl p-8">
+            <div className="bg-gradient-to-br from-gray-900 to-gray-950 border-2 border-gold/30 rounded-2xl p-8">
               <h3 className="text-3xl font-bold text-gold mb-6 flex items-center space-x-2">
                 <MapPin className="w-6 h-6" />
                 <span>Visit Us</span>
@@ -72,7 +72,7 @@ export default function LocationPage() {
             </div>
 
             {/* Transportation */}
-            <div className="bg-gradient-to-br from-gray-900 to-black border-2 border-gold/30 rounded-2xl p-8">
+            <div className="bg-gradient-to-br from-gray-900 to-gray-950 border-2 border-gold/30 rounded-2xl p-8">
               <h3 className="text-2xl font-bold text-gold mb-6">Getting Here</h3>
               
               <div className="space-y-4">
@@ -104,11 +104,11 @@ export default function LocationPage() {
           </div>
 
           {/* Map */}
-          <div className="bg-gradient-to-br from-gray-900 to-black border-2 border-gold/30 rounded-2xl p-8">
+          <div className="bg-gradient-to-br from-gray-900 to-gray-950 border-2 border-gold/30 rounded-2xl p-8">
             <h3 className="text-2xl font-bold text-gold mb-6">Location Map</h3>
             
             {/* Placeholder for map - in a real application, you would integrate with Google Maps or similar */}
-            <div className="w-full h-96 bg-gray-800 rounded-lg flex items-center justify-center border border-gold/20">
+            <div className="w-full h-96 bg-gray-900 rounded-lg flex items-center justify-center border border-gold/20">
               <div className="text-center">
                 <MapPin className="w-16 h-16 text-gold mx-auto mb-4" />
                 <p className="text-gray-400">Interactive map will be displayed here</p>
@@ -120,19 +120,19 @@ export default function LocationPage() {
             <div className="mt-8">
               <h4 className="text-white font-semibold mb-4">Nearby Landmarks</h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="bg-gray-800 rounded-lg p-4">
+                <div className="bg-gray-900 rounded-lg p-4">
                   <h5 className="text-gold font-medium">Potsdamer Platz</h5>
                   <p className="text-gray-400 text-sm">8 min walk</p>
                 </div>
-                <div className="bg-gray-800 rounded-lg p-4">
+                <div className="bg-gray-900 rounded-lg p-4">
                   <h5 className="text-gold font-medium">Brandenburg Gate</h5>
                   <p className="text-gray-400 text-sm">15 min walk</p>
                 </div>
-                <div className="bg-gray-800 rounded-lg p-4">
+                <div className="bg-gray-900 rounded-lg p-4">
                   <h5 className="text-gold font-medium">Checkpoint Charlie</h5>
                   <p className="text-gray-400 text-sm">12 min walk</p>
                 </div>
-                <div className="bg-gray-800 rounded-lg p-4">
+                <div className="bg-gray-900 rounded-lg p-4">
                   <h5 className="text-gold font-medium">Mall of Berlin</h5>
                   <p className="text-gray-400 text-sm">10 min walk</p>
                 </div>

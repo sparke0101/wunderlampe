@@ -21,7 +21,7 @@ export default function ReservationPage() {
   };
 
   return (
-    <section className="min-h-screen bg-black py-20 px-4">
+    <section className="min-h-screen bg-gray-950 py-20 px-4">
       <div className="container mx-auto max-w-4xl">
         {/* Header */}
         <div className="text-center mb-12">
@@ -34,7 +34,7 @@ export default function ReservationPage() {
         </div>
 
         {/* Reservation Form */}
-        <div className="bg-gradient-to-br from-gray-900 to-black border-2 border-gold/30 rounded-2xl p-8 shadow-xl shadow-gold/10">
+        <div className="bg-gradient-to-br from-gray-900 to-gray-950 border-2 border-gold/30 rounded-2xl p-8 shadow-xl shadow-gold/10">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Name */}
@@ -48,7 +48,7 @@ export default function ReservationPage() {
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({...formData, name: e.target.value})}
-                  className="w-full px-4 py-3 bg-gray-800 border border-gold/30 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-gold transition-colors duration-300"
+                  className="w-full px-4 py-3 bg-gray-900 border border-gold/30 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-gold transition-colors duration-300"
                   placeholder="Enter your full name"
                 />
               </div>
@@ -64,7 +64,7 @@ export default function ReservationPage() {
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({...formData, email: e.target.value})}
-                  className="w-full px-4 py-3 bg-gray-800 border border-gold/30 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-gold transition-colors duration-300"
+                  className="w-full px-4 py-3 bg-gray-900 border border-gold/30 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-gold transition-colors duration-300"
                   placeholder="Enter your email"
                 />
               </div>
@@ -80,7 +80,7 @@ export default function ReservationPage() {
                   required
                   value={formData.phone}
                   onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                  className="w-full px-4 py-3 bg-gray-800 border border-gold/30 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-gold transition-colors duration-300"
+                  className="w-full px-4 py-3 bg-gray-900 border border-gold/30 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-gold transition-colors duration-300"
                   placeholder="Enter your phone number"
                 />
               </div>
@@ -94,7 +94,7 @@ export default function ReservationPage() {
                 <select
                   value={formData.guests}
                   onChange={(e) => setFormData({...formData, guests: e.target.value})}
-                  className="w-full px-4 py-3 bg-gray-800 border border-gold/30 rounded-lg text-white focus:outline-none focus:border-gold transition-colors duration-300"
+                  className="w-full px-4 py-3 bg-gray-900 border border-gold/30 rounded-lg text-white focus:outline-none focus:border-gold transition-colors duration-300"
                 >
                   {[...Array(12)].map((_, i) => (
                     <option key={i} value={i + 1}>{i + 1} {i === 0 ? 'Guest' : 'Guests'}</option>
@@ -113,7 +113,7 @@ export default function ReservationPage() {
                   required
                   value={formData.date}
                   onChange={(e) => setFormData({...formData, date: e.target.value})}
-                  className="w-full px-4 py-3 bg-gray-800 border border-gold/30 rounded-lg text-white focus:outline-none focus:border-gold transition-colors duration-300"
+                  className="w-full px-4 py-3 bg-gray-900 border border-gold/30 rounded-lg text-white focus:outline-none focus:border-gold transition-colors duration-300"
                 />
               </div>
 
@@ -126,7 +126,7 @@ export default function ReservationPage() {
                 <select
                   value={formData.time}
                   onChange={(e) => setFormData({...formData, time: e.target.value})}
-                  className="w-full px-4 py-3 bg-gray-800 border border-gold/30 rounded-lg text-white focus:outline-none focus:border-gold transition-colors duration-300"
+                  className="w-full px-4 py-3 bg-gray-900 border border-gold/30 rounded-lg text-white focus:outline-none focus:border-gold transition-colors duration-300"
                 >
                   <option value="">Select time</option>
                   <option value="18:00">6:00 PM</option>
@@ -152,7 +152,7 @@ export default function ReservationPage() {
                 rows={4}
                 value={formData.message}
                 onChange={(e) => setFormData({...formData, message: e.target.value})}
-                className="w-full px-4 py-3 bg-gray-800 border border-gold/30 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-gold transition-colors duration-300"
+                className="w-full px-4 py-3 bg-gray-900 border border-gold/30 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-gold transition-colors duration-300"
                 placeholder="Any special requests or notes..."
               />
             </div>

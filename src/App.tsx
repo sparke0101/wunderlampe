@@ -30,7 +30,7 @@ function App() {
 
   return (
     <LanguageProvider>
-      <div className="min-h-screen bg-black text-white">
+      <div className="min-h-screen bg-gray-950 text-white">
         <Header currentPage={currentPage} onPageChange={setCurrentPage} />
         <main className="pt-16">
           {renderPage()}

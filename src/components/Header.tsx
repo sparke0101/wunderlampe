@@ -28,7 +28,7 @@ export default function Header({ currentPage, onPageChange }: HeaderProps) {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-gold/20">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-gray-950/95 backdrop-blur-md border-b border-gold/20">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -79,7 +79,7 @@ export default function Header({ currentPage, onPageChange }: HeaderProps) {
               </button>
               
               {isLanguageMenuOpen && (
-                <div className="absolute right-0 mt-2 w-48 bg-black/95 backdrop-blur-md border border-gold/20 rounded-lg shadow-xl">
+                <div className="absolute right-0 mt-2 w-48 bg-gray-950/98 backdrop-blur-md border border-gold/20 rounded-lg shadow-xl">
                   {languages.map((lang) => (
                     <button
                       key={lang.code}
