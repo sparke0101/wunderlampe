@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Menu as MenuIcon } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 interface HeroProps {
@@ -10,7 +10,7 @@ export default function Hero({ onPageChange }: HeroProps) {
   const { t } = useLanguage();
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950">
         <div className="absolute inset-0 bg-[url('/WhatsApp%20Image%202025-07-08%20at%203.36.54%20AM.jpeg')] bg-cover bg-center opacity-40" />
@@ -33,10 +33,10 @@ export default function Hero({ onPageChange }: HeroProps) {
             alt="Wunder Lampe Logo" 
             className="w-16 h-16 mx-auto mb-4 animate-pulse brightness-110" 
           />
-          <h1 className="text-6xl md:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gold via-yellow-400 to-gold mb-4 animate-fade-in">
+          <h1 className="text-5xl md:text-7xl font-display font-bold text-gold mb-4 animate-fade-in">
             {t('heroTitle')}
           </h1>
-          <p className="text-2xl md:text-3xl text-soft-blue-white font-body font-light mb-6 animate-fade-in-delay">
+          <p className="text-xl md:text-2xl text-soft-blue-white font-body font-light mb-6 animate-fade-in-delay">
             {t('heroTagline')}
           </p>
         </div>
@@ -45,22 +45,66 @@ export default function Hero({ onPageChange }: HeroProps) {
           {t('heroDescription')}
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-delay-3">
+        {/* Primary CTA - View Menu */}
+        <div className="mb-12 animate-fade-in-delay-3">
           <button
             onClick={() => onPageChange('menu')}
-            className="group px-8 py-4 bg-gold text-black font-body font-semibold rounded-lg transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-gold/50 flex items-center space-x-2 hover:bg-gold-light"
+            className="group w-full sm:w-auto px-12 py-5 bg-gold text-black font-body font-bold text-xl rounded-xl transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-gold/50 flex items-center justify-center space-x-3 hover:bg-gold-light mb-4"
           >
+            <MenuIcon className="w-6 h-6" />
             <span>{t('viewMenu')}</span>
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+            <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
           </button>
           
           <button
             onClick={() => onPageChange('reservation')}
-            className="group px-8 py-4 bg-black border-2 border-gold text-white font-body font-semibold rounded-lg hover:bg-gold hover:text-black transition-all duration-300 flex items-center space-x-2"
+            className="group w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-gold text-white font-body font-semibold text-lg rounded-xl hover:bg-gold hover:text-black transition-all duration-300 flex items-center justify-center space-x-2"
           >
             <span>{t('makeReservation')}</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
           </button>
+        </div>
+      </div>
+
+      {/* Quick Menu Preview */}
+      <div className="relative z-10 px-4 pb-20">
+        <div className="container mx-auto max-w-4xl">
+          <div className="bg-gray-900/80 backdrop-blur-md border border-gold/30 rounded-2xl p-6">
+            <h3 className="text-2xl font-display font-bold text-gold mb-6 text-center">Quick Menu Preview</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {[
+                { name: 'Shisha', price: '13€', image: '/WhatsApp%20Image%202025-07-08%20at%202.11.40%20PM.jpeg' },
+                { name: 'Cocktails', price: '8.90€', image: '/WhatsApp%20Image%202025-07-08%20at%202.30.33%20PM.jpeg' },
+                { name: 'Longdrinks', price: '7.50€', image: '/WhatsApp%20Image%202025-07-08%20at%203.36.54%20AM.jpeg' },
+                { name: 'Bottles', price: '90€', image: '/1000134193-removebg-preview.png' }
+              ].map((item, index) => (
+                <div 
+                  key={index}
+                  onClick={() => onPageChange('menu')}
+                  className="bg-gray-800/60 rounded-xl p-4 text-center cursor-pointer hover:bg-gold/20 transition-all duration-300 transform hover:scale-105"
+                >
+                  <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-gold/20 flex items-center justify-center overflow-hidden">
+                    <img 
+                      src={item.image} 
+                      alt={item.name}
+                      className="w-12 h-12 object-cover rounded-full"
+                      loading="lazy"
+                    />
+                  </div>
+                  <h4 className="text-white font-body font-semibold text-lg mb-1">{item.name}</h4>
+                  <p className="text-gold font-body font-bold">from {item.price}</p>
+                </div>
+              ))}
+            </div>
+            <div className="text-center mt-6">
+              <button
+                onClick={() => onPageChange('menu')}
+                className="text-gold hover:text-gold-light font-body font-medium text-lg transition-colors duration-300"
+              >
+                View Full Menu →
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 

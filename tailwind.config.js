@@ -30,6 +30,18 @@ export default {
         'body': ['Lato', 'system-ui', 'sans-serif'],
         sans: ['Lato', 'system-ui', 'sans-serif'],
       },
+      fontSize: {
+        'base': '18px', // Increased base font size for better mobile readability
+        'lg': '20px',
+        'xl': '22px',
+        '2xl': '26px',
+        '3xl': '30px',
+        '4xl': '36px',
+        '5xl': '48px',
+        '6xl': '60px',
+        '7xl': '72px',
+        '8xl': '96px',
+      },
     },
   },
   plugins: [],

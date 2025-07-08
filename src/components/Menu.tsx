@@ -4,26 +4,41 @@ import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Menu() {
   const { t } = useLanguage();
-  const [activeCategory, setActiveCategory] = useState('cocktails');
+  const [activeCategory, setActiveCategory] = useState('shisha');
 
   const categories = [
+    { 
+      id: 'shisha', 
+      label: t('shisha'), 
+      icon: () => (
+        <img 
+          src="/1000134193-removebg-preview.png" 
+          alt="Shisha" 
+          className="w-5 h-5 brightness-110" 
+        />
+      ),
+      image: '/WhatsApp%20Image%202025-07-08%20at%202.11.40%20PM.jpeg'
+    },
+    { 
+      id: 'cocktails', 
+      label: t('cocktails'), 
+      icon: Martini,
+      image: '/WhatsApp%20Image%202025-07-08%20at%202.30.33%20PM.jpeg'
+    },
+    { 
+      id: 'longdrinks', 
+      label: t('longdrinks'), 
+      icon: Martini,
+      image: '/WhatsApp%20Image%202025-07-08%20at%203.36.54%20AM.jpeg'
+    },
     { id: 'softdrinks', label: t('softdrinks'), icon: Droplets },
     { id: 'hotDrinks', label: t('hotDrinks'), icon: Coffee },
     { id: 'beer', label: t('beer'), icon: Beer },
-    { id: 'longdrinks', label: t('longdrinks'), icon: Martini },
-    { id: 'cocktails', label: t('cocktails'), icon: Martini },
     { id: 'nonAlcoholicCocktails', label: t('nonAlcoholicCocktails'), icon: Martini },
     { id: 'shots', label: t('shots'), icon: Flame },
     { id: 'wine', label: t('wine'), icon: Wine },
     { id: 'bottles', label: t('bottles'), icon: Wine },
     { id: 'whiskys', label: t('whiskys'), icon: Flame },
-    { id: 'shisha', label: t('shisha'), icon: () => (
-      <img 
-        src="/1000134193-removebg-preview.png" 
-        alt="Shisha" 
-        className="w-5 h-5 brightness-110" 
-      />
-    ) },
   ];
 
   // Sample menu items for each category
@@ -203,23 +218,43 @@ export default function Menu() {
       { name: 'Red Label 4cl', price: '6,50 €', description: 'Johnnie Walker Red Label Whisky' },
       { name: 'Jack Daniels 4cl', price: '6,50 €', description: 'Tennessee Whiskey aus Amerika' },
     ],
-    // Add more categories as needed
   };
 
-  const currentItems = menuItems[activeCategory as keyof typeof menuItems] || menuItems.cocktails;
+  const currentItems = menuItems[activeCategory as keyof typeof menuItems] || menuItems.shisha;
+  const currentCategory = categories.find(cat => cat.id === activeCategory);
 
   return (
     <section className="min-h-screen bg-gray-950 py-20 px-4">
       <div className="container mx-auto max-w-6xl">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-5xl md:text-6xl font-display font-bold text-gold mb-4">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-gold mb-4">
             {t('menu')}
           </h2>
           <p className="text-xl text-light-gray font-body max-w-2xl mx-auto">
             Discover our premium selection of cocktails, shisha, and fine beverages
           </p>
         </div>
+
+        {/* Category Header Image */}
+        {currentCategory?.image && (
+          <div className="mb-8">
+            <div className="relative h-48 md:h-64 rounded-2xl overflow-hidden">
+              <img 
+                src={currentCategory.image} 
+                alt={currentCategory.label}
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-950/80 to-transparent" />
+              <div className="absolute bottom-4 left-4">
+                <h3 className="text-3xl md:text-4xl font-display font-bold text-white">
+                  {currentCategory.label}
+                </h3>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Category Tabs */}
         <div className="mb-12">
@@ -230,14 +265,14 @@ export default function Menu() {
                 <button
                   key={category.id}
                   onClick={() => setActiveCategory(category.id)}
-                  className={`flex items-center space-x-2 px-4 py-3 rounded-lg font-body font-medium transition-all duration-300 ${
+                  className={`flex items-center space-x-2 px-4 py-3 rounded-xl font-body font-medium transition-all duration-300 text-lg ${
                     activeCategory === category.id
                       ? 'bg-gold text-black shadow-lg shadow-gold/30'
                       : 'bg-gray-900 text-light-gray hover:bg-gold/20 hover:text-gold border border-gold/20'
                   }`}
                 >
                   <Icon className="w-5 h-5" />
-                  <span className="text-sm">{category.label}</span>
+                  <span>{category.label}</span>
                 </button>
               );
             })}
@@ -252,18 +287,18 @@ export default function Menu() {
               className="group bg-gradient-to-br from-gray-900 to-gray-950 border-2 border-gold/30 rounded-xl p-6 hover:border-gold transition-all duration-300 hover:shadow-xl hover:shadow-gold/20 transform hover:-translate-y-2"
             >
               <div className="flex justify-between items-start mb-4">
-                <h3 className="text-xl font-body font-semibold text-white group-hover:text-gold transition-colors duration-300">
+                <h3 className="text-xl font-body font-semibold text-white group-hover:text-gold transition-colors duration-300 leading-tight">
                   {item.name}
                 </h3>
-                <span className="text-2xl font-body font-bold text-gold bg-gold/10 px-3 py-1 rounded-full">
+                <span className="text-2xl font-body font-bold text-gold bg-gold/10 px-3 py-1 rounded-full ml-2 flex-shrink-0">
                   {item.price}
                 </span>
               </div>
-              <p className="text-light-gray font-body group-hover:text-white transition-colors duration-300">
+              <p className="text-light-gray font-body group-hover:text-white transition-colors duration-300 text-lg leading-relaxed">
                 {item.description}
               </p>
               <div className="mt-4 flex justify-end">
-                <button className="text-gold hover:text-gold-light transition-colors duration-300 font-body font-medium">
+                <button className="text-gold hover:text-gold-light transition-colors duration-300 font-body font-medium text-lg">
                   Order Now →
                 </button>
               </div>
