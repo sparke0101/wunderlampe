@@ -72,7 +72,7 @@ export default function ContactPage() {
             {t('contact')}
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-light-gray font-body max-w-2xl mx-auto px-2">
-            Get in touch with us for reservations, events, or any inquiries
+            Kontaktieren Sie uns für Reservierungen, Veranstaltungen oder sonstige Anfragen
           </p>
         </div>
 
