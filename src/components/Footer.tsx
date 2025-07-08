@@ -20,7 +20,7 @@ export default function Footer() {
               <span className="text-xl sm:text-2xl font-bold text-gold">Wunderlampe</span>
             </div>
             <p className="text-sm sm:text-base text-light-gray font-body leading-relaxed">
-              Experience the perfect blend of premium shisha, exquisite cocktails, and luxurious atmosphere in the heart of the city.
+              Erleben Sie die perfekte Mischung aus Premium-Shisha, erlesenen Cocktails und luxuriöser Atmosphäre im Herzen der Stadt.
             </p>
           </div>
 
