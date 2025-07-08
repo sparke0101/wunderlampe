@@ -75,8 +75,8 @@ export default function Hero({ onPageChange }: HeroProps) {
               {[
                 { name: 'Shisha', price: '13€', image: '/close-up-hookah-vaping_23-2149297187.jpg' },
                 { name: 'Cocktails', price: '8.90€', image: '/viski-glass-with-orange-cocktail-with-oranges-zest_140725-8680.jpg' },
-                { name: 'Longdrinks', price: '7.50€', image: '/WhatsApp%20Image%202025-07-08%20at%203.36.54%20AM.jpeg' },
-                { name: 'Bottles', price: '90€', image: '/1000134193-removebg-preview.png' }
+                { name: 'Longdrinks', price: '7.50€', image: '/viski-glass-with-orange-cocktail-with-oranges-zest_140725-8680%20copy.jpg' },
+                { name: 'Bottles', price: '90€', image: '/alcohol-bottle-with-plant-scarf-daisies-candle_176474-6042.jpg' }
               ].map((item, index) => (
                 <div 
                   key={index}
