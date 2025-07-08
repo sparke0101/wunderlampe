@@ -35,7 +35,17 @@ export default function ReservationPage() {
         body: JSON.stringify(formData),
       });
 
-      const data = await response.json();
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const text = await response.text();
+      let data;
+      try {
+        data = JSON.parse(text);
+      } catch (parseError) {
+        throw new Error('Invalid response from server');
+      }
 
       if (data.success) {
         setSubmitStatus('success');
