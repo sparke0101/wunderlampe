@@ -68,7 +68,7 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="text-lg sm:text-xl font-body font-semibold text-gold">{t('newsletter')}</h3>
             <p className="text-light-gray font-body text-xs sm:text-sm">
-              Stay updated with our latest offers and events
+              Bleiben Sie über unsere neuesten Angebote und Veranstaltungen auf dem Laufenden
             </p>
             <div className="flex flex-col sm:flex-row gap-2 sm:gap-0">
               <input
