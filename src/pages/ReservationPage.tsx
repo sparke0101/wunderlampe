@@ -129,6 +129,10 @@ export default function ReservationPage() {
                   className="w-full px-4 py-3 bg-gray-900 border border-gold/30 rounded-lg text-white focus:outline-none focus:border-gold transition-colors duration-300"
                 >
                   <option value="">Select time</option>
+                  <option value="16:00">4:00 PM</option>
+                  <option value="16:30">4:30 PM</option>
+                  <option value="17:00">5:00 PM</option>
+                  <option value="17:30">5:30 PM</option>
                   <option value="18:00">6:00 PM</option>
                   <option value="18:30">6:30 PM</option>
                   <option value="19:00">7:00 PM</option>
@@ -139,6 +143,13 @@ export default function ReservationPage() {
                   <option value="21:30">9:30 PM</option>
                   <option value="22:00">10:00 PM</option>
                   <option value="22:30">10:30 PM</option>
+                  <option value="23:00">11:00 PM</option>
+                  <option value="23:30">11:30 PM</option>
+                  <option value="00:00">12:00 AM</option>
+                  <option value="00:30">12:30 AM</option>
+                  <option value="01:00">1:00 AM</option>
+                  <option value="01:30">1:30 AM</option>
+                  <option value="02:00">2:00 AM</option>
                 </select>
               </div>
             </div>
