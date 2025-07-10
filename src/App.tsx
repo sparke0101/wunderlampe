@@ -42,7 +42,11 @@ function App() {
   }, [isLoading]);
 
   if (isLoading) {
-    return <LoadingSpinner />;
+    return (
+      <LanguageProvider>
+        <LoadingSpinner />
+      </LanguageProvider>
+    );
   }
 
   const renderPage = () => {
