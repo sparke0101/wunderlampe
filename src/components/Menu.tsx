@@ -290,7 +290,7 @@ export default function Menu() {
                 <h3 className="text-lg sm:text-xl font-body font-semibold text-white group-hover:text-gold transition-colors duration-300 leading-tight flex-1 pr-2">
                   {item.name}
                 </h3>
-                <span className="text-lg sm:text-xl md:text-2xl font-body font-bold text-gold bg-gold/10 px-2 sm:px-3 py-1 rounded-full flex-shrink-0">
+                <span className="text-base sm:text-lg font-body font-bold text-gold bg-gold/10 px-2 sm:px-3 py-1 rounded-full flex-shrink-0 whitespace-nowrap">
                   {item.price}
                 </span>
               </div>
