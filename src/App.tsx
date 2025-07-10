@@ -38,10 +38,11 @@ export default function Menu() {
     { id: 'shots', label: t('shots'), icon: Flame },
     { id: 'wine', label: t('wine'), icon: Wine },
     { id: 'bottles', label: t('bottles'), icon: Wine },
-    { id: 'whiskys', label: t('whiskys'), icon: Flame },
+    { id: 'whiskys', label: t('whiskys'), icon: Flame }
   ];
 
-  // Sample menu items for each category
+  const menuItems = {
+    shots: [
       { name: 'Jägermeister', price: '3,00 € / 4,00 €', description: '2cl / 4cl - Deutscher Kräuterlikör' },
       { name: 'Kirschlikör', price: '3,00 € / 4,00 €', description: '2cl / 4cl - Süßer Kirschlikör' },
       { name: 'Apfellikör', price: '3,00 € / 4,00 €', description: '2cl / 4cl - Fruchtiger Apfellikör' },
@@ -51,7 +52,7 @@ export default function Menu() {
       { name: 'Tequila Gold', price: '3,00 € / 4,00 €', description: '2cl / 4cl - Goldener Tequila' },
       { name: 'Feigling', price: '3,00 € / 4,00 €', description: '2cl / 4cl - Feigenlikör' },
       { name: 'Malibu', price: '3,00 € / 4,00 €', description: '2cl / 4cl - Kokosrum' },
-      { name: 'Gisela', price: '3,00 € / 4,00 €', description: '2cl / 4cl - Gisela Shot' },
+      { name: 'Gisela', price: '3,00 € / 4,00 €', description: '2cl / 4cl - Gisela Shot' }
     ],
     wine: [
       { name: 'Wein', price: '4,50 €', description: 'Klassischer Hauswein' },
@@ -63,7 +64,7 @@ export default function Menu() {
       { name: 'Weißwein mit Sprite', price: '5,00 €', description: 'Weißwein mit Sprite gemischt' },
       { name: 'Sommerschorle', price: '5,50 €', description: 'Erfrischende Weinschorle für den Sommer' },
       { name: 'Sekt Trocken/Halbtrocken 0,11l', price: '4,50 €', description: 'Deutscher Sekt in kleiner Portion' },
-      { name: 'Hugo', price: '6,50 €', description: 'Prosecco mit Holunderblütensirup, Minze und Limette' },
+      { name: 'Hugo', price: '6,50 €', description: 'Prosecco mit Holunderblütensirup, Minze und Limette' }
     ],
     shisha: [
       { name: 'Lemon Chill', price: '13€', description: 'Erfrischende Zitrone mit kühlem Menthol' },
@@ -77,7 +78,7 @@ export default function Menu() {
       { name: 'Love 66', price: '13€', description: 'Romantische Beerenmischung' },
       { name: 'The Double Crunch (Doppelapfel)', price: '13€', description: 'Doppelt intensiver Apfelgeschmack' },
       { name: 'Red Island', price: '13€', description: 'Tropische rote Früchte' },
-      { name: 'Wunderlampe Spezial', price: '13€', description: 'Unsere Hauskreation - einzigartig und geheimnisvoll' },
+      { name: 'Wunderlampe Spezial', price: '13€', description: 'Unsere Hauskreation - einzigartig und geheimnisvoll' }
     ],
     bottles: [
       { name: 'Three Sixty (mit 6 Red Bull)', price: '90,00 €', description: 'Premium Vodka mit 6 Red Bull Energy Drinks' },
@@ -87,15 +88,15 @@ export default function Menu() {
       { name: 'Red Label (mit 2 Cola Flaschen)', price: '110,00 €', description: 'Johnnie Walker Red Label mit 2 Cola Flaschen' },
       { name: 'Moët', price: '120,00 €', description: 'Moët & Chandon Champagner' },
       { name: 'Belvedere (mit 6 Red Bull)', price: '130,00 €', description: 'Belvedere Premium Vodka mit 6 Red Bull Energy Drinks' },
-      { name: 'Grey Goose (mit 6 Red Bull)', price: '130,00 €', description: 'Grey Goose Premium Vodka mit 6 Red Bull Energy Drinks' },
+      { name: 'Grey Goose (mit 6 Red Bull)', price: '130,00 €', description: 'Grey Goose Premium Vodka mit 6 Red Bull Energy Drinks' }
     ],
     whiskys: [
       { name: 'Hennessy 4cl', price: '8,50 €', description: 'Premium französischer Cognac' },
       { name: 'Chivas Regal 4cl', price: '8,50 €', description: 'Schottischer Blended Whisky' },
       { name: 'Ballantines 4cl', price: '6,50 €', description: 'Schottischer Blended Whisky' },
       { name: 'Red Label 4cl', price: '6,50 €', description: 'Johnnie Walker Red Label Whisky' },
-      { name: 'Jack Daniels 4cl', price: '6,50 €', description: 'Tennessee Whiskey aus Amerika' },
-    ],
+      { name: 'Jack Daniels 4cl', price: '6,50 €', description: 'Tennessee Whiskey aus Amerika' }
+    ]
   };
 
   const currentItems = menuItems[activeCategory as keyof typeof menuItems] || menuItems.shisha;
