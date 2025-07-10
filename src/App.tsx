@@ -53,22 +53,7 @@ export default function Menu() {
       { name: 'Ipanema (Erdbeer)', price: '7,50 €', description: 'Erdbeeren, Zuckersirup, Soda' },
       { name: 'Ipanema (Mango)', price: '7,50 €', description: 'Mango, Zuckersirup, Soda' },
       { name: 'Ipanema (Maracuja)', price: '7,50 €', description: 'Maracuja, Zuckersirup, Soda' },
-      { name: 'Ipanema (Melone)', price: '7,50 €', description: 'Melone, Zuckersirup, Soda' }
-    ]
-  };
-
-  return (
-    <section className="py-12 sm:py-16 md:py-20">
-      <div className="container mx-auto px-4">
-        {activeCategory && categories.find(c => c.id === activeCategory)?.image && (
-          <div className="relative mb-8 sm:mb-12">
-            <div className="aspect-[21/9] w-full overflow-hidden rounded-2xl">
-              <div className="absolute inset-0">
-                <img
-                  src={categories.find(c => c.id === activeCategory)?.image}
-                  alt={categories.find(c => c.id === activeCategory)?.label}
-                  className="w-full h-full object-cover"
-                />
+      { name: 'Ipanema (Melone)', price: '7,50 €', description: 'Melone, Zuckersirup, Soda' },
               </div>
             </div>
           </div>
@@ -99,7 +84,7 @@ export default function Menu() {
 
         {/* Menu Items Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-          {menuItems[activeCategory]?.map((item, index) => (
+          {currentItems.map((item, index) => (
             <div
               key={index}
               className="group bg-gradient-to-br from-gray-900 to-gray-950 border-2 border-gold/30 rounded-xl p-4 sm:p-6 hover:border-gold transition-all duration-300 hover:shadow-xl hover:shadow-gold/20 transform hover:-translate-y-2 active:scale-95"
