@@ -53,12 +53,13 @@ export default function Menu() {
       { name: 'Ipanema (Erdbeer)', price: '7,50 €', description: 'Erdbeeren, Zuckersirup, Soda' },
       { name: 'Ipanema (Mango)', price: '7,50 €', description: 'Mango, Zuckersirup, Soda' },
       { name: 'Ipanema (Maracuja)', price: '7,50 €', description: 'Maracuja, Zuckersirup, Soda' },
-      { name: 'Ipanema (Melone)', price: '7,50 €', description: 'Melone, Zuckersirup, Soda' },
-              </div>
-            </div>
-          </div>
-        )}
+      { name: 'Ipanema (Melone)', price: '7,50 €', description: 'Melone, Zuckersirup, Soda' }
+    ]
+  };
 
+  return (
+    <section className="py-12 sm:py-16">
+      <div className="container mx-auto px-4">
         {/* Category Tabs */}
         <div className="mb-8 sm:mb-12">
           <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-6 sm:mb-8 px-2">
@@ -84,7 +85,7 @@ export default function Menu() {
 
         {/* Menu Items Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-          {currentItems.map((item, index) => (
+          {menuItems[activeCategory]?.map((item, index) => (
             <div
               key={index}
               className="group bg-gradient-to-br from-gray-900 to-gray-950 border-2 border-gold/30 rounded-xl p-4 sm:p-6 hover:border-gold transition-all duration-300 hover:shadow-xl hover:shadow-gold/20 transform hover:-translate-y-2 active:scale-95"
