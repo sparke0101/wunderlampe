@@ -232,7 +232,7 @@ export default function Menu() {
             {t('menu')}
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-light-gray font-body max-w-2xl mx-auto px-2">
-            Entdecken Sie unsere Premium-Auswahl an Cocktails, Shishas und erlesenen Getränken
+            {t('menuDescription')}
           </p>
         </div>
 

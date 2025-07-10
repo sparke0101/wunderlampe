@@ -72,7 +72,7 @@ export default function ContactPage() {
             {t('contact')}
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-light-gray font-body max-w-2xl mx-auto px-2">
-            Kontaktieren Sie uns für Reservierungen, Veranstaltungen oder sonstige Anfragen
+            {t('contactDescription')}
           </p>
         </div>
 
@@ -80,31 +80,31 @@ export default function ContactPage() {
           {/* Contact Information */}
           <div className="space-y-8">
             <div className="bg-gradient-to-br from-gray-900 to-gray-950 border-2 border-gold/30 rounded-2xl p-4 sm:p-6 md:p-8">
-              <h3 className="text-2xl sm:text-3xl font-display font-bold text-gold mb-4 sm:mb-6">Nehmen Sie Kontakt auf</h3>
+              <h3 className="text-2xl sm:text-3xl font-display font-bold text-gold mb-4 sm:mb-6">{t('takeContact')}</h3>
               
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <Phone className="w-6 h-6 text-gold mt-1 flex-shrink-0" />
                   <div>
-                    <h4 className="text-white font-body font-semibold text-base sm:text-lg">Phone</h4>
+                    <h4 className="text-white font-body font-semibold text-base sm:text-lg">{t('phone')}</h4>
                     <a href="tel:+4915788818885" className="text-light-gray font-body hover:text-gold transition-colors text-sm sm:text-base">+49 1578 8818885</a>
-                    <p className="text-gray-500 font-body text-xs sm:text-sm">Verfügbar während der Geschäftszeiten</p>
+                    <p className="text-gray-500 font-body text-xs sm:text-sm">{t('availableDuringHours')}</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
                   <Mail className="w-6 h-6 text-gold mt-1 flex-shrink-0" />
                   <div>
-                    <h4 className="text-white font-body font-semibold text-base sm:text-lg">Email</h4>
+                    <h4 className="text-white font-body font-semibold text-base sm:text-lg">{t('email')}</h4>
                     <a href="mailto:info.wunderlampe@gmail.com" className="text-light-gray font-body hover:text-gold transition-colors text-sm sm:text-base break-all">info.wunderlampe@gmail.com</a>
-                    <p className="text-gray-500 font-body text-xs sm:text-sm">Wir antworten innerhalb von 24 Stunden</p>
+                    <p className="text-gray-500 font-body text-xs sm:text-sm">{t('replyWithin24')}</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
                   <MapPin className="w-6 h-6 text-gold mt-1 flex-shrink-0" />
                   <div>
-                    <h4 className="text-white font-body font-semibold text-base sm:text-lg">Address</h4>
+                    <h4 className="text-white font-body font-semibold text-base sm:text-lg">{t('address')}</h4>
                     <p className="text-light-gray font-body text-sm sm:text-base">Eisenbahnstraße 98<br />04315 Leipzig, Germany</p>
                   </div>
                 </div>
@@ -112,10 +112,10 @@ export default function ContactPage() {
                 <div className="flex items-start space-x-4">
                   <Clock className="w-6 h-6 text-gold mt-1 flex-shrink-0" />
                   <div>
-                    <h4 className="text-white font-body font-semibold text-base sm:text-lg">Business Hours</h4>
+                    <h4 className="text-white font-body font-semibold text-base sm:text-lg">{t('businessHours')}</h4>
                     <div className="text-light-gray font-body space-y-1 text-sm sm:text-base">
-                      <p>Montag-Freitag: 4:00 PM - 2:00 AM</p>
-                      <p>Wochenende: 4:00 PM - 4:00 AM</p>
+                      <p>{t('mondayFriday')}</p>
+                      <p>{t('weekend')}</p>
                     </div>
                   </div>
                 </div>
@@ -124,28 +124,28 @@ export default function ContactPage() {
 
             {/* Special Services */}
             <div className="bg-gradient-to-br from-gray-900 to-gray-950 border-2 border-gold/30 rounded-2xl p-4 sm:p-6 md:p-8">
-              <h3 className="text-xl sm:text-2xl font-display font-bold text-gold mb-4 sm:mb-6">Special Services</h3>
+              <h3 className="text-xl sm:text-2xl font-display font-bold text-gold mb-4 sm:mb-6">{t('specialServices')}</h3>
               
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-gold rounded-full flex-shrink-0"></div>
-                  <span className="text-light-gray font-body text-sm sm:text-base">Private Events & Parties</span>
+                  <span className="text-light-gray font-body text-sm sm:text-base">{t('privateEvents')}</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-gold rounded-full flex-shrink-0"></div>
-                  <span className="text-light-gray font-body text-sm sm:text-base">Corporate Events</span>
+                  <span className="text-light-gray font-body text-sm sm:text-base">{t('corporateEvents')}</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-gold rounded-full flex-shrink-0"></div>
-                  <span className="text-light-gray font-body text-sm sm:text-base">Birthday Celebrations</span>
+                  <span className="text-light-gray font-body text-sm sm:text-base">{t('birthdayParties')}</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-gold rounded-full flex-shrink-0"></div>
-                  <span className="text-light-gray font-body text-sm sm:text-base">VIP Table Service</span>
+                  <span className="text-light-gray font-body text-sm sm:text-base">{t('vipService')}</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-gold rounded-full flex-shrink-0"></div>
-                  <span className="text-light-gray font-body text-sm sm:text-base">Catering Services</span>
+                  <span className="text-light-gray font-body text-sm sm:text-base">{t('catering')}</span>
                 </div>
               </div>
             </div>
@@ -153,13 +153,13 @@ export default function ContactPage() {
 
           {/* Contact Form */}
           <div className="bg-gradient-to-br from-gray-900 to-gray-950 border-2 border-gold/30 rounded-2xl p-4 sm:p-6 md:p-8">
-            <h3 className="text-2xl sm:text-3xl font-display font-bold text-gold mb-4 sm:mb-6">Send us a Message</h3>
+            <h3 className="text-2xl sm:text-3xl font-display font-bold text-gold mb-4 sm:mb-6">{t('sendMessage')}</h3>
             
             {/* Status Messages */}
             {submitStatus === 'success' && (
               <div className="mb-6 p-4 bg-green-900/50 border border-green-500/50 rounded-lg flex items-center space-x-3">
                 <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
-                <p className="text-green-100 text-sm sm:text-base">Your message has been sent successfully! We'll get back to you within 24 hours.</p>
+                <p className="text-green-100 text-sm sm:text-base">{t('messageSentSuccess')}</p>
               </div>
             )}
             
@@ -173,27 +173,27 @@ export default function ContactPage() {
             <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <div>
-                  <label className="block text-gold font-body font-medium mb-2 text-sm sm:text-base">Name *</label>
+                  <label className="block text-gold font-body font-medium mb-2 text-sm sm:text-base">{t('name')} {t('required')}</label>
                   <input
                     type="text"
                     required
                     value={formData.name}
                     onChange={(e) => handleInputChange('name', e.target.value)}
                     className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-900 border border-gold/30 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-gold transition-colors duration-300 text-sm sm:text-base"
-                    placeholder="Your full name"
+                    placeholder={t('yourFullName')}
                     disabled={isSubmitting}
                   />
                 </div>
 
                 <div>
-                  <label className="block text-gold font-body font-medium mb-2 text-sm sm:text-base">Email *</label>
+                  <label className="block text-gold font-body font-medium mb-2 text-sm sm:text-base">{t('email')} {t('required')}</label>
                   <input
                     type="email"
                     required
                     value={formData.email}
                     onChange={(e) => handleInputChange('email', e.target.value)}
                     className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-900 border border-gold/30 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-gold transition-colors duration-300 text-sm sm:text-base"
-                    placeholder="your@email.com"
+                    placeholder={t('yourEmail')}
                     disabled={isSubmitting}
                   />
                 </div>
@@ -201,19 +201,19 @@ export default function ContactPage() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <div>
-                  <label className="block text-gold font-body font-medium mb-2 text-sm sm:text-base">Phone</label>
+                  <label className="block text-gold font-body font-medium mb-2 text-sm sm:text-base">{t('phone')}</label>
                   <input
                     type="tel"
                     value={formData.phone}
                     onChange={(e) => handleInputChange('phone', e.target.value)}
                     className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-900 border border-gold/30 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-gold transition-colors duration-300 text-sm sm:text-base"
-                    placeholder="Your phone number"
+                    placeholder={t('yourPhone')}
                     disabled={isSubmitting}
                   />
                 </div>
 
                 <div>
-                  <label className="block text-gold font-body font-medium mb-2 text-sm sm:text-base">Subject *</label>
+                  <label className="block text-gold font-body font-medium mb-2 text-sm sm:text-base">{t('subject')} {t('required')}</label>
                   <select
                     required
                     value={formData.subject}
@@ -221,24 +221,24 @@ export default function ContactPage() {
                     className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-900 border border-gold/30 rounded-lg text-white focus:outline-none focus:border-gold transition-colors duration-300 text-sm sm:text-base"
                     disabled={isSubmitting}
                   >
-                    <option value="">Select a subject</option>
-                    <option value="reservation">Reservation</option>
-                    <option value="event">Private Event</option>
-                    <option value="feedback">Feedback</option>
-                    <option value="other">Other</option>
+                    <option value="">{t('selectSubject')}</option>
+                    <option value="reservation">{t('subjectReservation')}</option>
+                    <option value="event">{t('subjectEvent')}</option>
+                    <option value="feedback">{t('subjectFeedback')}</option>
+                    <option value="other">{t('subjectOther')}</option>
                   </select>
                 </div>
               </div>
 
               <div>
-                <label className="block text-gold font-body font-medium mb-2 text-sm sm:text-base">Message *</label>
+                <label className="block text-gold font-body font-medium mb-2 text-sm sm:text-base">{t('message')} {t('required')}</label>
                 <textarea
                   required
                   rows={4}
                   value={formData.message}
                   onChange={(e) => handleInputChange('message', e.target.value)}
                   className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-900 border border-gold/30 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-gold transition-colors duration-300 text-sm sm:text-base resize-none"
-                  placeholder="Tell us how we can help you..."
+                  placeholder={t('tellUsHow')}
                   disabled={isSubmitting}
                 />
               </div>
@@ -249,7 +249,7 @@ export default function ContactPage() {
                 className="w-full px-6 sm:px-8 py-3 sm:py-4 bg-gold text-black font-body font-semibold rounded-lg transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-gold/50 flex items-center justify-center space-x-2 hover:bg-gold-light active:scale-95 text-base sm:text-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
               >
                 <Send className="w-5 h-5" />
-                <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
+                <span>{isSubmitting ? t('sending') : t('sendMessage')}</span>
               </button>
             </form>
           </div>

@@ -70,7 +70,7 @@ export default function Hero({ onPageChange }: HeroProps) {
       <div className="relative z-10 px-4 sm:px-6 pb-20">
         <div className="container mx-auto max-w-4xl">
           <div className="bg-gray-900/80 backdrop-blur-md border border-gold/30 rounded-2xl p-4 sm:p-6">
-            <h3 className="text-xl sm:text-2xl font-display font-bold text-gold mb-4 sm:mb-6 text-center">Quick Menu Preview</h3>
+            <h3 className="text-xl sm:text-2xl font-display font-bold text-gold mb-4 sm:mb-6 text-center">{t('quickMenuPreview')}</h3>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
               {[
                 { name: 'Shisha', price: '13€', image: '/close-up-hookah-vaping_23-2149297187.jpg' },
@@ -92,7 +92,7 @@ export default function Hero({ onPageChange }: HeroProps) {
                     />
                   </div>
                   <h4 className="text-white font-body font-semibold text-sm sm:text-lg mb-1">{item.name}</h4>
-                  <p className="text-gold font-body font-bold text-xs sm:text-base">from {item.price}</p>
+                  <p className="text-gold font-body font-bold text-xs sm:text-base">{t('from')} {item.price}</p>
                 </div>
               ))}
             </div>
@@ -101,7 +101,7 @@ export default function Hero({ onPageChange }: HeroProps) {
                 onClick={() => onPageChange('menu')}
                 className="text-gold hover:text-gold-light font-body font-medium text-base sm:text-lg transition-colors duration-300 py-2 px-4 rounded-lg hover:bg-gold/10"
               >
-                View Full Menu →
+                {t('viewFullMenu')}
               </button>
             </div>
           </div>
