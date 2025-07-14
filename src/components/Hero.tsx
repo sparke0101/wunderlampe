@@ -71,28 +71,35 @@ export default function Hero({ onPageChange }: HeroProps) {
         <div className="container mx-auto max-w-4xl">
           <div className="bg-gray-900/80 backdrop-blur-md border border-gold/30 rounded-2xl p-4 sm:p-6">
             <h3 className="text-xl sm:text-2xl font-display font-bold text-gold mb-4 sm:mb-6 text-center">{t('quickMenuPreview')}</h3>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 sm:gap-4">
               {[
-                { name: 'Shisha', price: '13€', image: '/close-up-hookah-vaping_23-2149297187.jpg' },
-                { name: 'Cocktails', price: '8.90€', image: '/tasty-alcoholic-coctails_1042628-549264 copy.jpg' },
-                { name: 'Longdrinks', price: '7.50€', image: '/viski-glass-with-orange-cocktail-with-oranges-zest_140725-8680%20copy.jpg' },
-                { name: 'Bottles', price: '90€', image: '/alcohol-bottle-with-plant-scarf-daisies-candle_176474-6042.jpg' }
+                { name: t('shisha'), price: '13€', image: '/close-up-hookah-vaping_23-2149297187.jpg' },
+                { name: t('cocktails'), price: '8.90€', image: '/tasty-alcoholic-coctails_1042628-549264 copy.jpg' },
+                { name: t('longdrinks'), price: '7.50€', image: '/viski-glass-with-orange-cocktail-with-oranges-zest_140725-8680%20copy.jpg' },
+                { name: t('softdrinks'), price: '3.50€', image: '/tasty-alcoholic-coctails_1042628-549264.jpg' },
+                { name: t('hotDrinks'), price: '2.50€', image: '/fresh-cocktails-wooden-table-with-leafs-generative-ai_188544-12374.jpg' },
+                { name: t('beer'), price: '4.50€', image: '/viski-glass-with-orange-cocktail-with-oranges-zest_140725-8680.jpg' },
+                { name: t('nonAlcoholicCocktails'), price: '7.50€', image: '/set-classic-cold-alcoholic-cocktails-white-russian-bramble-whiskey-sour-negroni_400928-290.jpg' },
+                { name: t('shots'), price: '3.50€', image: '/hookah-lounge-bar-table-relaxation-habit_482257-9588.jpg' },
+                { name: t('wine'), price: '5.50€', image: '/alcohol-bottle-with-plant-scarf-daisies-candle_176474-6042.jpg' },
+                { name: t('bottles'), price: '90€', image: '/alcohol-bottle-with-plant-scarf-daisies-candle_176474-6042.jpg' },
+                { name: t('whiskys'), price: '8.00€', image: '/viski-glass-with-orange-cocktail-with-oranges-zest_140725-8680.jpg' }
               ].map((item, index) => (
                 <div 
                   key={index}
                   onClick={() => onPageChange('menu')}
-                  className="bg-gray-800/60 rounded-xl p-3 sm:p-4 text-center cursor-pointer hover:bg-gold/20 transition-all duration-300 transform hover:scale-105 active:scale-95"
+                  className="bg-gray-800/60 rounded-xl p-2 sm:p-3 text-center cursor-pointer hover:bg-gold/20 transition-all duration-300 transform hover:scale-105 active:scale-95"
                 >
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-2 sm:mb-3 rounded-full bg-gold/20 flex items-center justify-center overflow-hidden">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 mx-auto mb-2 rounded-full bg-gold/20 flex items-center justify-center overflow-hidden">
                     <img 
                       src={item.image} 
                       alt={item.name}
-                      className="w-8 h-8 sm:w-12 sm:h-12 object-cover rounded-full"
+                      className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 object-cover rounded-full"
                       loading="lazy"
                     />
                   </div>
-                  <h4 className="text-white font-body font-semibold text-sm sm:text-lg mb-1">{item.name}</h4>
-                  <p className="text-gold font-body font-bold text-xs sm:text-base">{t('from')} {item.price}</p>
+                  <h4 className="text-white font-body font-semibold text-xs sm:text-sm lg:text-base mb-1 leading-tight">{item.name}</h4>
+                  <p className="text-gold font-body font-bold text-xs sm:text-sm">{t('from')} {item.price}</p>
                 </div>
               ))}
             </div>
